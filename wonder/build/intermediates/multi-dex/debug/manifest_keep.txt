@@ -1,0 +1,55 @@
+-keep class android.support.multidex.MultiDexApplication {
+    <init>();
+    void attachBaseContext(android.content.Context);
+}
+-keep class org.wondertech.wonder.GcmBroadcastReceiver { <init>(); }
+-keep class org.wondertech.wonder.services.GCMNotificationIntentService { <init>(); }
+-keep class org.wondertech.wonder.MainActivity { <init>(); }
+-keep class org.wondertech.wonder.RegisterActivity { <init>(); }
+-keep class org.wondertech.wonder.VerifyActivity { <init>(); }
+-keep class org.wondertech.wonder.SetDrivingActivity { <init>(); }
+-keep class org.wondertech.wonder.LeaveMessageActivity { <init>(); }
+-keep class org.wondertech.wonder.GetMessageActivity { <init>(); }
+-keep class org.wondertech.wonder.HelpActivity { <init>(); }
+-keep class org.wondertech.wonder.SplashActivity { <init>(); }
+-keep class org.wondertech.wonder.IntroActivity { <init>(); }
+-keep class org.wondertech.wonder.FirstDriverActivity { <init>(); }
+-keep class org.wondertech.wonder.LaunchActivity { <init>(); }
+-keep class org.wondertech.wonder.InviteActivity { <init>(); }
+-keep class org.wondertech.wonder.SettingsActivity { <init>(); }
+-keep class org.wondertech.wonder.services.ActivityRecognitionIntentService { <init>(); }
+-keep class org.wondertech.wonder.DrivingLogActivity { <init>(); }
+-keep class org.wondertech.wonder.CallActivity { <init>(); }
+-keep class org.wondertech.wonder.VOIPActivity { <init>(); }
+-keep class org.wondertech.wonder.WebActivity { <init>(); }
+-keep class org.wondertech.wonder.BootReceiver { <init>(); }
+-keep class org.wondertech.wonder.SMSreceiver { <init>(); }
+-keep class org.wondertech.wonder.InviteMessageActivity { <init>(); }
+-keep class org.wondertech.wonder.services.LocationService { <init>(); }
+-keep class org.wondertech.wonder.NewVerifyActivity { <init>(); }
+-keep class org.wondertech.wonder.SellingAnimation { <init>(); }
+-keep class org.wondertech.wonder.DistractDriving { <init>(); }
+-keep class org.wondertech.wonder.WhoisDriving { <init>(); }
+-keep class org.wondertech.wonder.ProtectDriver { <init>(); }
+-keep class org.wondertech.wonder.AutoResponse { <init>(); }
+-keep class org.wondertech.wonder.EnableDriving { <init>(); }
+-keep class org.wondertech.wonder.DetectionDescription { <init>(); }
+-keep class org.wondertech.wonder.VerifyMessage { <init>(); }
+-keep class com.zendrive.sdk.services.UserActivityService { <init>(); }
+-keep class com.zendrive.sdk.services.ZendriveService { <init>(); }
+-keep class org.wondertech.wonder.services.ContactService { <init>(); }
+-keep class org.wondertech.wonder.services.VOIPService { <init>(); }
+-keep class org.wondertech.wonder.services.DetectionDrivingService { <init>(); }
+-keep class org.wondertech.wonder.data.WonderProvider { <init>(); }
+-keep class com.uservoice.uservoicesdk.activity.PortalActivity { <init>(); }
+-keep class com.uservoice.uservoicesdk.activity.ForumActivity { <init>(); }
+-keep class com.uservoice.uservoicesdk.activity.ArticleActivity { <init>(); }
+-keep class com.uservoice.uservoicesdk.activity.TopicActivity { <init>(); }
+-keep class com.uservoice.uservoicesdk.activity.ContactActivity { <init>(); }
+-keep class com.uservoice.uservoicesdk.activity.PostIdeaActivity { <init>(); }
+-keep public class * extends android.app.backup.BackupAgent {
+    <init>();
+}
+-keep public class * extends java.lang.annotation.Annotation {
+    *;
+}

@@ -1,0 +1,36 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="org.wondertech.wonder.DetectionDescription">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="158"
+        android:scaleType="centerCrop"
+        android:src="@drawable/how_does_it_work_1"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="250"
+        android:gravity="center"
+        android:id="@+id/detection_text"
+        android:textSize="25sp"
+        android:background="@drawable/how_does_it_work_2"/>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="742"
+        android:src="@drawable/how_does_it_work_3"
+        android:scaleType="centerCrop"/>
+    <ImageButton
+        android:layout_width="match_parent"
+        android:scaleType="fitXY"
+        android:background="@android:color/transparent"
+        android:layout_height="0dp"
+        android:layout_weight="133"
+        android:src="@drawable/how_does_it_work_4"
+        android:id="@+id/detect_back"/>
+
+
+</LinearLayout>

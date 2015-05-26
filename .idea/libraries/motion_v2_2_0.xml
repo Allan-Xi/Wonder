@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="motion-v2.2.0">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/wonder/libs/motion-v2.2.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

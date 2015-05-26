@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/driver_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/driver_session_bg" >
+    <RelativeLayout 
+        android:id="@+id/basic_item"
+        android:layout_width="match_parent"
+    	android:layout_height="50dp"
+    	android:layout_alignParentTop="true">
+    	<TextView
+    	    android:id="@+id/driver_name"
+        	android:layout_width="wrap_content"
+    		android:layout_height="wrap_content"
+    		android:textColor="#6f6f6f"
+    		android:textSize="21sp"
+    		android:layout_marginTop="15dp"
+    		android:layout_alignParentLeft="true"
+    		android:layout_marginLeft="24dp"/>
+    	<TextView
+    	    android:id="@+id/driver_status"
+        	android:layout_width="wrap_content"
+    		android:layout_height="wrap_content"
+    		android:layout_marginTop="15dp"
+    		android:textSize="21sp"
+    		android:layout_alignParentRight="true"
+    		android:layout_marginRight="24dp"/> 
+    </RelativeLayout>
+    <ImageView 
+        android:id="@+id/driver_line"
+    	android:layout_width="266dp"
+        android:layout_height="1dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="50dp"
+        android:scaleType="centerCrop"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/line_driver"/>
+    <RelativeLayout 
+        android:id="@+id/additional_item"
+        android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	android:layout_below="@+id/driver_line"
+    	android:layout_marginTop="12dp">
+    	
+    	<ImageButton
+    	    android:id="@+id/leave_message"
+        	android:layout_width="125dp"
+    		android:layout_height="40dp"
+    		android:layout_alignParentLeft="true"
+    		android:layout_marginLeft="24dp"
+    		android:src="@drawable/messagebutton"
+    		android:scaleType="centerInside"
+    		android:background="@android:color/transparent"/>
+    	<ImageButton
+    	    android:id="@+id/call_back"
+        	android:layout_width="125dp"
+    		android:layout_height="40dp"
+    		android:layout_gravity="right|center_vertical"
+    		android:src="@drawable/requestcallbutton"
+    		android:layout_alignParentRight="true"
+    		android:layout_marginRight="24dp"
+    		android:scaleType="centerInside"
+    		android:background="@android:color/transparent"/>
+    </RelativeLayout>
+      
+</RelativeLayout>
+

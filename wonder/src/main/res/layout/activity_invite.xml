@@ -1,0 +1,58 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="org.wondertech.wonder.InviteActivity" >
+
+    <LinearLayout
+        
+        android:layout_width="match_parent"
+    	android:layout_height="0dp"
+    	android:layout_weight="198"
+    	android:orientation="horizontal"
+    	android:background="#5fb9ff"
+    	android:id="@+id/invite_title">
+    <TextView
+        android:layout_width="0dp"
+    	android:layout_height="match_parent"
+    	android:layout_weight="502"
+    	android:gravity="center"
+        android:textSize="20sp"
+        android:id="@+id/invite_title_text"
+        android:textColor="#ffffff" />
+    <ImageView
+        android:id="@+id/invite_icon"
+        android:layout_width="0dp"
+    	android:layout_height="match_parent"
+    	android:layout_weight="208"
+    	android:scaleType="center"
+    	android:background="@android:color/transparent"/>
+	</LinearLayout>
+	<SearchView 
+	    android:id="@+id/invite_searchview"
+	    android:layout_width="match_parent"
+    	android:layout_height="0dp"
+    	android:layout_weight="119"
+    	android:background="#d9d9d9"
+    	android:queryHint="Invite and prevent an accident"
+	    ></SearchView>
+	<GridView
+	    android:layout_marginTop="10dp"
+	    android:id="@+id/invite_gridview"
+	    android:layout_width="match_parent"
+    	android:layout_height="0dp"
+    	android:layout_weight="800"
+    	android:numColumns="3"
+    	android:verticalSpacing="15dp"
+    	android:gravity="center_horizontal|top"/>
+	<ImageButton 
+	    android:id="@+id/invite_next"
+	    android:layout_width="match_parent"
+    	android:layout_height="0dp"
+    	android:layout_weight="120"
+    	android:src="@drawable/skip_button"
+    	android:scaleType="fitXY"
+    	android:background="@android:color/transparent"/>
+    	
+</LinearLayout>

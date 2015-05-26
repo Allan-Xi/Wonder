@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/xiyu/Desktop/workspace/NavigationDrawer2/wonder/libs/AndroidEasingFunctions-1.0.0.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="ae609e93bcbe4988aa371ab615b7abb43e9399bf">
+        <dex dex="/Users/xiyu/Desktop/workspace/NavigationDrawer2/wonder/build/intermediates/pre-dexed/debug/AndroidEasingFunctions-1.0.0-414d4b3cbef203b1ad0a67208e55a00574115f0b.jar" />
+    </item>
+    <item
+        jar="/Users/xiyu/Desktop/workspace/NavigationDrawer2/wonder/build/intermediates/exploded-aar/com.google.android.gms/play-services-appinvite/7.3.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="bb36004beb02b69562cbec9aa7d6a3cf16bf5d1b">
+        <dex dex="/Users/xiyu/Desktop/workspace/NavigationDrawer2/wonder/build/intermediates/pre-dexed/debug/classes-9d2adfb687fc05828cc2c5b90230d969725cb663.jar" />
+    </item>
+    <item
+        jar="/Users/xiyu/Desktop/workspace/NavigationDrawer2/wonder/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/7.3.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="7215ac1f2fca947b9415a6ee2a1bf991364aab24">
+        <dex dex="/Users/xiyu/Desktop/workspace/NavigationDrawer2/wonder/build/intermediates/pre-dexed/debug/classes-60f2dd7c74c4ec78f5ec8d59977f1b1ee1cbbc5d.jar" />
+    </item>
+    <item
+        jar="/Users/xiyu/Desktop/workspace/NavigationDrawer2/wonder/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
+        <dex dex="/Users/xiyu/Desktop/workspace/NavigationDrawer2/wonder/build/intermediates/pre-dexed/debug/classes-cfea42c493230ac92d1060641d21a46fdb70e748.jar" />
+    </item>
+    <item
+        jar="/Users/xiyu/Desktop/workspace/NavigationDrawer2/wonder/build/intermediates/exploded-aar/com.android.support/support-v4/22.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="4e86306289ace4aa0cfec44a05ed2b410d36989d">
+        <dex dex="/Users/xiyu/Desktop/workspace/NavigationDrawer2/wonder/build/intermediates/pre-dexed/debug/classes-9473ec8a0e553dccee466a8c66308f95b0478107.jar" />
+    </item>
+    <item
+        jar="/Users/xiyu/Desktop/workspace/NavigationDrawer2/wonder/build/intermediates/exploded-aar/com.google.android.gms/play-services-safetynet/7.3.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="0708ef60917bf94913fe9ef972a655b99462dca7">
+        <dex dex="/Users/xiyu/Desktop/workspace/NavigationDrawer2/wonder/build/intermediates/pre-dexed/debug/classes-f8eb183b407a5c27671d2b1b3adde3e1c5163f14.jar" />
+    </item>
+    <item
+        jar="/Users/xiyu/Desktop/workspace/NavigationDrawer2/wonder/build/intermediates/exploded-aar/com.google.android.gms/play-services-fitness/7.3.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="4f4fe3c23776540625f3c2844152a7510fddf9f1">
+        <dex dex="/Users/xiyu/Desktop/workspace/NavigationDrawer2/wonder/build/intermediates/pre-dexed/debug/classes-c8a925f2e10217fa1802dce92452882de243d330.jar" />
+    </item>
+    <item
+        jar="/Users/xiyu/Desktop/workspace/NavigationDrawer2/wonder/build/intermediates/exploded-aar/com.google.android.gms/play-services-identity/7.3.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="b48d5c51a9a9e329005106b4667f54948de4d4d8">
+        <dex dex="/Users/xiyu/Desktop/workspace/NavigationDrawer2/wonder/build/intermediates/pre-dexed/debug/classes-d58c478ff46d5adb0bd041583312a75558a9488f.jar" />
+    </item>
+    <item
+        jar="/Users/xiyu/Desktop/workspace/NavigationDrawer2/wonder/build/intermediates/exploded-aar/com.google.android.gms/play-services-nearby/7.3.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="5ea948d825957be6c4358c48422bee60eef2d487">
+        <dex dex="/Users/xiyu/Desktop/workspace/NavigationDrawer2/wonder/build/intermediates/pre-dexed/debug/classes-9f7fe49e44616a6db8fe382b77b38c4afa518951.jar" />
+    </item>
+    <item
+        jar="/Users/xiyu/Desktop/workspace/NavigationDrawer2/wonder/build/intermediates/exploded-aar/com.google.android.gms/play-services-games/7.3.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="3b4ff5c39dace8f3b4ab4cab8191785547a0815f">
+        <dex dex="/Users/xiyu/Desktop/workspace/NavigationDrawer2/wonder/build/intermediates/pre-dexed/debug/classes-cf2b54fa5f0ae96992083e69dcc609972b8a262d.jar" />
+    </item>
+    <item
+        jar="/Users/xiyu/Desktop/workspace/NavigationDrawer2/wonder/libs/amplitude-android-1.4.3.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="a0c3e7e10e98105df443d176819e55a85cadb204">
+        <dex dex="/Users/xiyu/Desktop/workspace/NavigationDrawer2/wonder/build/intermediates/pre-dexed/debug/amplitude-android-1.4.3-4eb89b1ed438b694fb0d61d775dce00c32f6c864.jar" />
+    </item>
+    <item
+        jar="/Users/xiyu/Desktop/workspace/NavigationDrawer2/wonder/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/7.3.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="b2c07cdb814fe988ad05f7b4d767a841514a5991">
+        <dex dex="/Users/xiyu/Desktop/workspace/NavigationDrawer2/wonder/build/intermediates/pre-dexed/debug/classes-9cf68edd9bd9de18a7398bd9272544d3f52e0cf3.jar" />
+    </item>
+    <item
+        jar="/Users/xiyu/.gradle/caches/modules-2/files-2.1/oauth.signpost/signpost-commonshttp4/1.2.1.2/731e05de30cfeb1f41d417f886277f9597fe0f36/signpost-commonshttp4-1.2.1.2.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="731e05de30cfeb1f41d417f886277f9597fe0f36">
+        <dex dex="/Users/xiyu/Desktop/workspace/NavigationDrawer2/wonder/build/intermediates/pre-dexed/debug/signpost-commonshttp4-1.2.1.2-175802bc68eafb68154a786808fef0ae73748703.jar" />
+    </item>
+    <item
+        jar="/Users/xiyu/Desktop/workspace/NavigationDrawer2/wonder/build/intermediates/exploded-aar/com.android.support/support-v4/22.0.0/libs/internal_impl-22.0.0.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="b5b92f469d515a13d778900f6d50c03d12f35504">
+        <dex dex="/Users/xiyu/Desktop/workspace/NavigationDrawer2/wonder/build/intermediates/pre-dexed/debug/internal_impl-22.0.0-9a4f1f382a2ec385a0b964bef78443fe2017eee6.jar" />
+    </item>
+    <item
+        jar="/Users/xiyu/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpcore/4.0.1/e813b8722c387b22e1adccf7914729db09bcb4a9/httpcore-4.0.1.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="e813b8722c387b22e1adccf7914729db09bcb4a9">
+        <dex dex="/Users/xiyu/Desktop/workspace/NavigationDrawer2/wonder/build/intermediates/pre-dexed/debug/httpcore-4.0.1-0f5fa8f614ae0dfdc139ed8719a7f77660597a7a.jar" />
+    </item>
+    <item
+        jar="/Users/xiyu/.gradle/caches/modules-2/files-2.1/com.amazonaws/aws-android-sdk-core/2.1.9/d8c32a202033dc54897e64b3f8da5f5f5be6dea4/aws-android-sdk-core-2.1.9.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="d8c32a202033dc54897e64b3f8da5f5f5be6dea4">
+        <dex dex="/Users/xiyu/Desktop/workspace/NavigationDrawer2/wonder/build/intermediates/pre-dexed/debug/aws-android-sdk-core-2.1.9-47372274d3f139f6e3f04c01b58de256832bd983.jar" />
+    </item>
+    <item
+        jar="/Users/xiyu/Desktop/workspace/NavigationDrawer2/wonder/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/7.3.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="3988694bf9d8186ff97ad5cdfa4ed88b5010fe08">
+        <dex dex="/Users/xiyu/Desktop/workspace/NavigationDrawer2/wonder/build/intermediates/pre-dexed/debug/classes-08c4e2d9463f19632953351326ddafee65a97acd.jar" />
+    </item>
+    <item
+        jar="/Users/xiyu/Desktop/workspace/NavigationDrawer2/wonder/libs/ZendriveSDK-1.1.0.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="500d87036e2e1c9af0b81228ff5d8bdf3d980298">
+        <dex dex="/Users/xiyu/Desktop/workspace/NavigationDrawer2/wonder/build/intermediates/pre-dexed/debug/ZendriveSDK-1.1.0-ace8c6f072ecb870f5c2878ecdd7c03c17e246f9.jar" />
+    </item>
+    <item
+        jar="/Users/xiyu/.gradle/caches/modules-2/files-2.1/commons-codec/commons-codec/1.8/af3be3f74d25fc5163b54f56a0d394b462dafafd/commons-codec-1.8.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="af3be3f74d25fc5163b54f56a0d394b462dafafd">
+        <dex dex="/Users/xiyu/Desktop/workspace/NavigationDrawer2/wonder/build/intermediates/pre-dexed/debug/commons-codec-1.8-f4c5fa96b60c2a51923f9bb7adf1a72bd97a0cf7.jar" />
+    </item>
+    <item
+        jar="/Users/xiyu/Desktop/workspace/NavigationDrawer2/wonder/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/7.3.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="6046e5cdaf799120b7c56a5a061d80e8854c4d34">
+        <dex dex="/Users/xiyu/Desktop/workspace/NavigationDrawer2/wonder/build/intermediates/pre-dexed/debug/classes-bf265d1b70786fa4310e72de4b111626dd4aa02f.jar" />
+    </item>
+    <item
+        jar="/Users/xiyu/.gradle/caches/modules-2/files-2.1/com.amazonaws/aws-android-sdk-sqs/2.1.9/92e40a47af7f308669e7957bcb30e93168f54609/aws-android-sdk-sqs-2.1.9.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="92e40a47af7f308669e7957bcb30e93168f54609">
+        <dex dex="/Users/xiyu/Desktop/workspace/NavigationDrawer2/wonder/build/intermediates/pre-dexed/debug/aws-android-sdk-sqs-2.1.9-03c135fc85b3fcb68bd69225b8e8145feddab205.jar" />
+    </item>
+    <item
+        jar="/Users/xiyu/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/22.0.0/support-annotations-22.0.0.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="685d0b2c590447e85284ed84712cb363ba04eff8">
+        <dex dex="/Users/xiyu/Desktop/workspace/NavigationDrawer2/wonder/build/intermediates/pre-dexed/debug/support-annotations-22.0.0-1c888e990e7f12cc415d3efb8f98fa886e08cacb.jar" />
+    </item>
+    <item
+        jar="/Users/xiyu/Desktop/workspace/NavigationDrawer2/wonder/build/intermediates/exploded-aar/com.google.android.gms/play-services-drive/7.3.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="a0ce76dfaccbfbd6c551ed2174280aaabe60fe47">
+        <dex dex="/Users/xiyu/Desktop/workspace/NavigationDrawer2/wonder/build/intermediates/pre-dexed/debug/classes-b487bc400cf30e99722dacc1cb6c7cf08f12babc.jar" />
+    </item>
+    <item
+        jar="/Users/xiyu/Desktop/workspace/NavigationDrawer2/wonder/libs/sinch-android-rtc-3.4.3.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="c8698fa5414b110fc37c13eddef42711e14e6fd1">
+        <dex dex="/Users/xiyu/Desktop/workspace/NavigationDrawer2/wonder/build/intermediates/pre-dexed/debug/sinch-android-rtc-3.4.3-dc75b3fafef8a5d1704c0238b20ce0600b368f02.jar" />
+    </item>
+    <item
+        jar="/Users/xiyu/Desktop/workspace/NavigationDrawer2/wonder/build/intermediates/exploded-aar/com.google.android.gms/play-services-analytics/7.3.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="9c9dea9e85aceb09d95df5e6f7bc8a43fc286068">
+        <dex dex="/Users/xiyu/Desktop/workspace/NavigationDrawer2/wonder/build/intermediates/pre-dexed/debug/classes-7bcc385ea7173274d3bfb34de7a13f650f86c3cf.jar" />
+    </item>
+    <item
+        jar="/Users/xiyu/Desktop/workspace/NavigationDrawer2/wonder/build/intermediates/exploded-aar/NavigationDrawer2/library/unspecified/classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="dadd543227ae64842c4dbc698eb9ebe8831220dc">
+        <dex dex="/Users/xiyu/Desktop/workspace/NavigationDrawer2/wonder/build/intermediates/pre-dexed/debug/classes-8f7c2228526ab19407548575e9da31bca9bb4847.jar" />
+    </item>
+    <item
+        jar="/Users/xiyu/Desktop/workspace/NavigationDrawer2/wonder/build/intermediates/exploded-aar/com.google.android.gms/play-services-appstate/7.3.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="0180d031a7b54dabb93b4af3869468b55dc938bd">
+        <dex dex="/Users/xiyu/Desktop/workspace/NavigationDrawer2/wonder/build/intermediates/pre-dexed/debug/classes-99834c3631e801840f19187bceccc460d68d504d.jar" />
+    </item>
+    <item
+        jar="/Users/xiyu/Desktop/workspace/NavigationDrawer2/wonder/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/7.3.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="fe3e0c6de7cceed888b277487238b6af9a1cc299">
+        <dex dex="/Users/xiyu/Desktop/workspace/NavigationDrawer2/wonder/build/intermediates/pre-dexed/debug/classes-7a3456349239f8230fd55750699ee53f12351a7e.jar" />
+    </item>
+    <item
+        jar="/Users/xiyu/Desktop/workspace/NavigationDrawer2/wonder/build/intermediates/exploded-aar/com.google.android.gms/play-services-wearable/7.3.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="e5bf453b070c1e39297986144960e45afa0fdfad">
+        <dex dex="/Users/xiyu/Desktop/workspace/NavigationDrawer2/wonder/build/intermediates/pre-dexed/debug/classes-89c3eb61492b2b68c46d858f30da6041abb40f78.jar" />
+    </item>
+    <item
+        jar="/Users/xiyu/Desktop/workspace/NavigationDrawer2/wonder/libs/AndroidViewAnimations-1.1.3.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="d8db345547f7a025130d1622f2608ec68e761641">
+        <dex dex="/Users/xiyu/Desktop/workspace/NavigationDrawer2/wonder/build/intermediates/pre-dexed/debug/AndroidViewAnimations-1.1.3-b7c91d9cddc1e45356926d7ac543227222bd7121.jar" />
+    </item>
+    <item
+        jar="/Users/xiyu/Desktop/workspace/NavigationDrawer2/wonder/build/intermediates/exploded-aar/com.google.android.gms/play-services-plus/7.3.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="59652857a825fff0de62166fca1bc9553cc01abb">
+        <dex dex="/Users/xiyu/Desktop/workspace/NavigationDrawer2/wonder/build/intermediates/pre-dexed/debug/classes-a606ff5654218c25ede46d259c19b3177b902bef.jar" />
+    </item>
+    <item
+        jar="/Users/xiyu/Desktop/workspace/NavigationDrawer2/wonder/build/intermediates/exploded-aar/com.google.android.gms/play-services-panorama/7.3.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="565a01f90f1529f73362707c4c185d0623a68782">
+        <dex dex="/Users/xiyu/Desktop/workspace/NavigationDrawer2/wonder/build/intermediates/pre-dexed/debug/classes-2f9dba2b926741596d91cfb98c550e73f449cf42.jar" />
+    </item>
+    <item
+        jar="/Users/xiyu/.gradle/caches/modules-2/files-2.1/com.crashlytics.android/crashlytics/1.1.13/e821eafa1bf489a26bdb71f95078c26785b37a1/crashlytics-1.1.13.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="0e821eafa1bf489a26bdb71f95078c26785b37a1">
+        <dex dex="/Users/xiyu/Desktop/workspace/NavigationDrawer2/wonder/build/intermediates/pre-dexed/debug/crashlytics-1.1.13-dd97df5c588bbe1ded26d07ac687018ca94d3422.jar" />
+    </item>
+    <item
+        jar="/Users/xiyu/Desktop/workspace/NavigationDrawer2/wonder/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast/7.3.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="e5b9f5b0aa8dee788beb63d23832cb29ce771343">
+        <dex dex="/Users/xiyu/Desktop/workspace/NavigationDrawer2/wonder/build/intermediates/pre-dexed/debug/classes-9e19dc6f03b7786d1fc5c5255cd8b8b784abc5a6.jar" />
+    </item>
+    <item
+        jar="/Users/xiyu/Desktop/workspace/NavigationDrawer2/wonder/build/intermediates/exploded-aar/com.uservoice/uservoice-android-sdk/1.2.4/classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="3f469fa0be7eb0766fb815b86bb4acd2d9b8dde2">
+        <dex dex="/Users/xiyu/Desktop/workspace/NavigationDrawer2/wonder/build/intermediates/pre-dexed/debug/classes-6e5259152c0e979d46d3a7ff5b9a778deeeaf29f.jar" />
+    </item>
+    <item
+        jar="/Users/xiyu/Desktop/workspace/NavigationDrawer2/wonder/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/7.3.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="e35fae1b377c23aa5fd2d309a190c2d0f73d54ec">
+        <dex dex="/Users/xiyu/Desktop/workspace/NavigationDrawer2/wonder/build/intermediates/pre-dexed/debug/classes-005291cbab074d5337cd644f10d7ecd6e3f416e0.jar" />
+    </item>
+    <item
+        jar="/Users/xiyu/Desktop/workspace/NavigationDrawer2/wonder/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/7.3.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="f2f7ec211ce4d244ee97a57523eeb4526dc3cf8a">
+        <dex dex="/Users/xiyu/Desktop/workspace/NavigationDrawer2/wonder/build/intermediates/pre-dexed/debug/classes-58994d846e50beb2a2fb8fd9c798de8ff2b88193.jar" />
+    </item>
+    <item
+        jar="/Users/xiyu/.gradle/caches/modules-2/files-2.1/oauth.signpost/signpost-core/1.2.1.2/bf95955dcf3d5a78c201e49b0c336787ea73f161/signpost-core-1.2.1.2.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="bf95955dcf3d5a78c201e49b0c336787ea73f161">
+        <dex dex="/Users/xiyu/Desktop/workspace/NavigationDrawer2/wonder/build/intermediates/pre-dexed/debug/signpost-core-1.2.1.2-42e352a03692e86aac60bab6917b2c03a73918a5.jar" />
+    </item>
+    <item
+        jar="/Users/xiyu/Desktop/workspace/NavigationDrawer2/wonder/libs/NineOldAndroid-2.4.0.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
+        <dex dex="/Users/xiyu/Desktop/workspace/NavigationDrawer2/wonder/build/intermediates/pre-dexed/debug/NineOldAndroid-2.4.0-ca05ab9068555521a98cc802d72238b9d194a333.jar" />
+    </item>
+    <item
+        jar="/Users/xiyu/Desktop/workspace/NavigationDrawer2/wonder/libs/android-viewbadger.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="f8dcea2647e741c296469c242000a4fac340c758">
+        <dex dex="/Users/xiyu/Desktop/workspace/NavigationDrawer2/wonder/build/intermediates/pre-dexed/debug/android-viewbadger-875d878711bbb6aafa12ce63afeaea9744dfe7dd.jar" />
+    </item>
+
+</items>

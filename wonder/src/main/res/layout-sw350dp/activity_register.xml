@@ -1,0 +1,47 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/register_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="org.wondertech.wonder.RegisterActivity"
+    android:focusable="true" android:focusableInTouchMode="true" >
+    <ImageView 
+        android:id="@+id/register_bg"
+        android:layout_width="match_parent"
+    	android:layout_height="match_parent"
+    	android:src="@drawable/firstpage"
+    	android:scaleType="centerCrop"/>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+  
+    
+    <EditText
+        android:id="@+id/phone"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="35dp"
+        android:layout_width="325dp"
+        android:layout_height="65dp"
+        android:gravity="center"
+        android:inputType="phone"
+        android:layout_centerHorizontal="true"        
+        android:hint="mobile number"
+        android:maxLength="10"
+        android:background="@drawable/let_me_see_input_box"
+        android:textSize="25sp"
+        android:textColor="#969696"/>
+        
+    <Button 
+        android:id="@+id/verify"
+        android:visibility="gone"
+		android:layout_alignParentBottom="true"
+        android:layout_marginBottom="55dp"
+        android:layout_width="30dp"
+        android:layout_height="22dp"
+		android:background="@drawable/arrow_to_verification"
+		android:layout_alignParentRight="true"
+		android:layout_marginRight="30dp"
+	/>
+
+</RelativeLayout>
+</FrameLayout>

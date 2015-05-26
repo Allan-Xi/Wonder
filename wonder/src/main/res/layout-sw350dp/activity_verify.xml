@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fcfdfd"
+    tools:context="org.wondertech.wonder.VerifyActivity" >
+	<FrameLayout 
+	    android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="21dp"
+        android:id="@+id/veri_title">
+	    <ImageButton
+	        android:id="@+id/up"
+	        android:layout_marginLeft="10dp"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_gravity="center_vertical"
+	        android:src="@drawable/small_left_blue_arrow"
+	        android:background="@android:color/transparent"/>
+	    <TextView
+	        android:id="@+id/veri"
+	        android:gravity="center"
+	        android:layout_gravity="center_horizontal"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="Enter Verification Code" 
+	        android:textSize="26sp"/>
+	</FrameLayout>
+    
+    
+    
+    
+    <LinearLayout 
+        android:id="@+id/phone_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/veri_title"
+		android:layout_marginTop="40dp"
+        android:layout_centerHorizontal="true">
+        <ImageView
+	        android:layout_width="18dp"
+	        android:layout_height="30dp"
+	        android:layout_marginRight="10dp"
+	        android:src="@drawable/small_smart_phone"
+	        android:background="@android:color/transparent"/>
+        <TextView 
+	        android:id="@+id/dis_phone"
+	     	android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:textSize="25sp"
+	        android:textColor="#969696"
+	        android:gravity="center"/>
+    </LinearLayout>
+    
+    <TextView 
+        android:id="@+id/code1"
+        android:layout_below="@+id/phone_layout"
+		android:layout_marginTop="40dp"
+        android:layout_width="57dp"
+        android:layout_height="57dp"
+        android:gravity="center"
+		android:layout_alignParentLeft="true"
+		android:layout_marginLeft="40dp"
+        android:background="@drawable/verification_blue"
+        android:textSize="30sp"/>
+    
+    <TextView 
+        android:id="@+id/code2"
+        android:layout_below="@+id/phone_layout"
+		android:layout_marginTop="40dp"
+        android:layout_width="57dp"
+        android:layout_height="57dp"
+        android:gravity="center"
+		android:layout_toRightOf="@+id/code1"
+		android:layout_marginLeft="17dp"
+        android:background="@drawable/verification_green"
+        android:textSize="30sp"/>
+    
+    <TextView
+        android:id="@+id/code3"
+        android:layout_below="@+id/phone_layout"
+		android:layout_marginTop="40dp"
+        android:layout_width="57dp"
+        android:layout_height="57dp"
+		android:layout_toRightOf="@+id/code2"
+		android:layout_marginLeft="17dp"
+        android:gravity="center"
+        android:background="@drawable/verification_red"
+        android:textSize="30sp"/>
+    
+    <TextView 
+        android:id="@+id/code4"
+        android:gravity="center"
+        android:layout_below="@+id/phone_layout"
+		android:layout_marginTop="40dp"
+        android:layout_width="57dp"
+        android:layout_height="57dp"
+		android:layout_toRightOf="@+id/code3"
+		android:layout_marginLeft="17dp"
+        android:background="@drawable/verification_yellow"
+        android:textSize="30sp"/>
+    <EditText 
+        android:id="@+id/help_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:textSize="1sp"
+        android:inputType="phone"
+        android:cursorVisible="false"
+        android:maxLength="4"
+        android:hint="verify_code"
+        android:background="@android:color/transparent">
+    </EditText>
+    <TextView
+        android:id="@+id/verify_privacy"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/code4"
+		android:layout_marginTop="25dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="By verifying your number you agree to our\nTOS and Privacy Policy below, also available for\nreview in settings."
+        android:textSize="11sp"
+        android:textColor="#cdcdcd"/>
+    
+    <ImageButton 
+        android:id="@+id/resend_code"
+		android:layout_below="@+id/verify_privacy"
+        android:layout_marginTop="10dp"
+        android:layout_width="288dp"
+        android:layout_height="58dp"
+		android:src="@drawable/resend_verification_button"
+		android:scaleType="centerInside"
+		android:layout_centerHorizontal="true"
+		android:background="@android:color/transparent"
+	/>
+    
+</RelativeLayout>

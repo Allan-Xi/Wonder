@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+	>
+    <FrameLayout 
+        android:id="@+id/show_drivers"
+        android:layout_width="match_parent"
+    	android:layout_height="0dp"
+    	android:layout_weight="798">
+    	<RelativeLayout 
+    	    android:layout_width="match_parent"
+	    	android:layout_height="match_parent"
+	    	android:background="#f0f0f0">
+    	    <ListView 
+	        android:id="@+id/driving_list"
+	        android:layout_width="match_parent"
+	    	android:layout_height="wrap_content"
+	    	android:divider="#ffffff"
+	        android:dividerHeight="2dp"
+	        />
+    	</RelativeLayout>
+	    
+	    <FrameLayout
+	        android:id="@+id/drive_clue"
+	        android:layout_width="match_parent"
+	    	android:layout_height="match_parent"
+			android:background="#4FC5EF">
+			<ImageView
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:src="@drawable/big_green_check"
+				android:scaleType="centerInside"
+				android:background="@android:color/transparent"/>
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:orientation="vertical"
+				android:layout_marginLeft="15dp"
+				>
+				<TextView
+					android:layout_width="match_parent"
+					android:layout_height="0dp"
+					android:layout_weight="216"
+					android:gravity="center_vertical|left"
+					android:text="You're all set!"
+					android:id="@+id/main_title"
+					android:textSize="40sp"
+					android:textColor="#ffffff"
+					android:background="@drawable/non_driver_blue_background_1"
+					/>
+				<TextView
+					android:layout_width="match_parent"
+					android:layout_height="0dp"
+					android:layout_weight="582"
+					android:gravity="center_vertical|left"
+					android:textSize="45sp"
+					android:textColor="#ffffff"
+					android:textStyle="bold"
+					android:id="@+id/main_text"
+					android:background="@drawable/non_driver_blue_background_2"
+					/>
+			</LinearLayout>
+
+	    
+	    </FrameLayout>
+    	
+    </FrameLayout>
+    <FrameLayout
+        android:id="@+id/question_layout"
+        android:layout_width="match_parent"
+    	android:layout_height="0dp"
+    	android:layout_weight="285">
+        <android.support.v4.view.ViewPager
+	        android:id="@+id/pager"
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent"
+        />
+        
+    </FrameLayout>       
+	
+</LinearLayout>

@@ -1,0 +1,42 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#a7d9ff"
+    tools:context="org.wondertech.wonder.FirstDriverActivity" >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Do you drive?"
+        android:textSize="27sp"
+        android:layout_marginTop="213dp"
+        android:layout_centerHorizontal="true"
+        android:textColor="#ffffff"
+         />
+    <ImageButton 
+        android:layout_width="136dp"
+        android:layout_height="52dp"
+        android:id="@+id/driver_yes"
+        android:src="@drawable/yes"
+        android:scaleType="centerInside"
+        android:layout_marginTop="285dp"
+        android:layout_marginLeft="36.5dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="@android:color/transparent"/>
+    
+    <ImageButton 
+        android:layout_width="136dp"
+        android:layout_height="52dp"
+        android:id="@+id/driver_no"
+        android:src="@drawable/no"
+        android:scaleType="centerInside"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="285dp"
+        android:layout_marginRight="36.5dp"
+        android:background="@android:color/transparent"/>
+    
+
+</RelativeLayout>

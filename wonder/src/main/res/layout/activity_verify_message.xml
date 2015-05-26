@@ -1,0 +1,41 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="org.wondertech.wonder.VerifyMessage">
+
+    <TextView
+        android:id="@+id/verify_receiver"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="97"
+        android:textColor="#ffffff"
+        android:background="#5bb6fc"
+        android:textSize="30sp"
+        android:text="WonderTech"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:gravity="center" />
+    <EditText
+        android:id="@+id/verify_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#ffffff"
+        android:gravity="top"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:textSize="20sp"
+        android:layout_weight="350" />
+    <Button
+        android:id="@+id/verify_message"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="107"
+        android:text="Send"
+        android:textColor="#ffffff"
+        android:gravity="center"
+        android:background="#5bb6fc"
+        android:textSize="30sp" />
+
+</LinearLayout>

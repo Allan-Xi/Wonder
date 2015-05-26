@@ -1,0 +1,40 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="org.wondertech.wonder.LeaveMessageActivity" >
+
+    <TextView
+        android:id="@+id/receiver"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="97"
+        android:background="#ffffff"
+        android:textSize="20sp"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:gravity="center_vertical" />
+    <EditText
+        android:id="@+id/message_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#ffffff"
+        android:gravity="top"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+	    android:layout_marginRight="@dimen/activity_horizontal_margin"
+	    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+	    android:textSize="20sp"
+        android:layout_weight="350" />
+    <Button
+        android:id="@+id/leave_message"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="107"
+        android:text="Save"
+        android:textColor="#ffffff"
+        android:gravity="center"
+        android:background="#5bb6fc"
+        android:textSize="20sp" />
+
+</LinearLayout>

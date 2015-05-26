@@ -1,0 +1,226 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="org.wondertech.wonder.IntroActivity"
+    android:background="#97d2ff" >
+
+    <TextView
+        android:id="@+id/intro_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="#ffffff"
+        android:textSize="20sp"
+        android:minLines="2"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="15dp"
+        android:text="You send a lot of texts."/>
+    
+    <TextView
+        android:id="@+id/intro_person1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/intro_title"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="35dp"
+        android:textSize="40sp"/>
+    
+    <TextView
+        android:id="@+id/intro_person4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="180dp"
+        android:layout_marginLeft="15dp"
+        android:textSize="40sp"/>
+    
+    <TextView
+        android:id="@+id/intro_person2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/intro_title"
+        android:layout_marginTop="10dp"
+        android:textSize="40sp"/>
+    
+    <TextView
+        android:id="@+id/intro_person3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/intro_title"
+        android:layout_marginTop="30dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="35dp"
+        android:textSize="40sp"/>
+    
+     
+    
+    
+    <ImageView 
+        android:id="@+id/intro_message1"
+        android:alpha="0"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/message_bobble"
+        android:scaleType="centerInside"
+        android:background="@android:color/transparent"/>
+    
+    <ImageView 
+        android:id="@+id/intro_message2"
+        android:alpha="0"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/message_bobble"
+        android:scaleType="centerInside"
+        android:background="@android:color/transparent"/>
+    
+    <ImageView 
+        android:id="@+id/intro_message3"
+        android:alpha="0"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/message_bobble"
+        android:scaleType="centerInside"
+        android:background="@android:color/transparent"/>
+    
+    <ImageView 
+        android:id="@+id/intro_phone"
+        android:layout_width="145dp"
+        android:layout_height="122dp"
+        android:layout_above="@+id/intro_btnlayout"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/small_phone"
+        android:scaleType="centerInside"
+        android:background="@android:color/transparent"
+        />
+    
+    <FrameLayout
+        android:id="@+id/intro_car"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="150dp">
+        <ImageView 
+            android:id="@+id/intro_stop"
+	        android:layout_width="40dp"
+	        android:layout_height="40dp"
+	        android:src="@drawable/stopsign"
+	        android:layout_gravity="center_horizontal"
+	        android:scaleType="centerInside"
+	        android:background="@android:color/transparent"/>
+        <FrameLayout
+          	android:id="@+id/intro_car_anim"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentTop="true"
+	        android:layout_marginTop="30dp">
+	        <TextView 
+	            android:id="@+id/intro_smallcar"
+	            android:layout_width="wrap_content"
+	        	android:layout_height="wrap_content"
+	        	android:textSize="50sp"
+	        	android:layout_marginTop="18dp"
+	        	android:layout_marginLeft="5.5dp"
+	        	/>
+	         <TextView 
+	            android:id="@+id/intro_smallperson"
+	            android:layout_width="wrap_content"
+	        	android:layout_height="wrap_content"
+	        	android:textSize="40sp"
+	        	android:layout_marginTop="0dp"
+	        	android:layout_marginLeft="15dp"/>
+	         <TextView 
+	            android:id="@+id/intro_smallcrash"
+	            android:layout_width="wrap_content"
+	        	android:layout_height="wrap_content"
+	        	android:textSize="25sp"
+	        	android:layout_marginTop="30dp"
+	        	android:layout_marginLeft="0dp"
+	        	android:scaleX="0"
+	        	android:scaleY="0"
+	        	/>
+	    </FrameLayout> 
+    </FrameLayout>
+    
+    
+    
+    <RelativeLayout 
+        android:id="@+id/intro_btnlayout"
+        android:layout_width="match_parent"
+        android:layout_height="66dp"
+        android:layout_alignParentBottom="true"
+        android:background="#ebebeb" >
+        <Button 
+            android:id="@+id/intro_button"
+        	android:layout_width="259dp"
+        	android:layout_height="45dp"
+        	android:gravity="center"
+        	android:text="What's the problem?"
+        	android:layout_centerInParent="true"
+        	android:textColor="#7e7e7e"
+        	android:background="@drawable/what_can_i_do_button_3"/>
+    </RelativeLayout>
+    
+    <FrameLayout 
+        android:id="@+id/big_phone_layout"
+        android:layout_width="187dp"
+        android:layout_height="319dp"
+        android:visibility="gone"
+        android:layout_alignParentRight="true"
+        android:layout_above="@+id/intro_btnlayout">
+        <ImageView
+            android:id="@+id/big_phone"
+        	android:layout_width="match_parent"
+        	android:layout_height="match_parent"
+        	android:src="@drawable/bigphone"
+        	android:scaleType="centerInside"
+        	android:background="@android:color/transparent"/>
+        <TextView 
+            android:id="@+id/emoji1"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:textSize="16sp"
+        	android:text="\u2705"
+        	android:scaleX="0"
+	        android:scaleY="0"
+        	android:layout_marginTop="105dp"
+        	android:layout_marginLeft="45dp"
+        	/>
+        <TextView 
+            android:id="@+id/emoji2"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:textSize="16sp"
+        	android:text="\u2705"
+        	android:scaleX="0"
+	        android:scaleY="0"
+        	android:layout_marginTop="150dp"
+        	android:layout_marginLeft="57dp"
+        	/>
+        <TextView 
+            android:id="@+id/emoji3"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:textSize="16sp"
+        	android:text="\u2705"
+        	android:scaleX="0"
+	        android:scaleY="0"
+        	android:layout_marginTop="202dp"
+        	android:layout_marginLeft="57dp"
+        	/>
+        <TextView 
+            android:id="@+id/emoji4"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:textSize="16sp"
+        	android:text="\u2705"
+        	android:scaleX="0"
+	        android:scaleY="0"
+        	android:layout_marginTop="248dp"
+        	android:layout_marginLeft="57dp"
+        	/>
+        
+    </FrameLayout>
+    
+</RelativeLayout>

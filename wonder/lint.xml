@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<lint>
+    <issue id="HandlerLeak">
+        <ignore path="src/com/example/android/navigationdrawerexample/IntroActivity.java" />
+        <ignore path="src/com/example/android/navigationdrawerexample/VerifyActivity.java" />
+    </issue>
+</lint>

@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="libphonenumber-7.0.5">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/wonder/libs/libphonenumber-7.0.5.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

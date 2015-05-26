@@ -1,0 +1,100 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#373737"
+    tools:context="org.wondertech.wonder.SetDrivingActivity" >
+    <TextView 
+        android:id ="@+id/not_disturb_2"
+        android:layout_width="226dp"
+    	android:layout_height="226dp"
+    	android:layout_centerHorizontal="true"
+    	android:layout_marginTop="10dp"
+    	android:textSize="40sp"
+    	android:gravity="center"
+    	android:background="@drawable/driving_red_circle"
+    	/>
+    <Button
+        android:id ="@+id/end_trip_2"
+        android:layout_width="103dp"
+    	android:layout_height="103dp"
+    	android:gravity="center"
+    	android:layout_centerHorizontal="true"
+		android:layout_below="@+id/not_disturb_2"
+		android:layout_marginTop="4dp"
+    	android:background="@drawable/driving_green_circle"/>
+    <TextView
+        android:id ="@+id/tap_finish"
+        android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	android:gravity="center_horizontal"
+    	android:layout_below="@+id/end_trip_2"
+    	android:layout_marginTop="4dp"
+    	android:text="tap to finish driving"
+    	android:textColor="#d1d1d1"
+    	android:textSize="15sp"/>
+    
+    <TextView
+        android:id ="@+id/time_remaining_2"
+        android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	android:gravity="center_horizontal"
+    	android:layout_below="@+id/tap_finish"
+    	android:layout_marginTop="15dp"
+    	android:text="time remaining"
+    	android:textColor="#ffffff"
+    	android:textSize="10sp"/>
+    
+    <TextView
+        android:id ="@+id/countdown_2"
+        android:layout_width="76dp"
+    	android:layout_height="76dp"
+    	android:gravity="center"
+    	android:layout_centerHorizontal="true"
+    	android:layout_below="@+id/time_remaining_2"
+    	android:layout_marginTop="6dp"
+    	android:textSize="15sp"
+    	android:textColor="#ffffff"
+    	android:lineSpacingMultiplier="0.85"
+    	android:background="@drawable/time_circle"/>
+    
+    <TextView
+        android:id ="@+id/auto_detection"
+        android:layout_width="76dp"
+    	android:layout_height="76dp"
+    	android:gravity="center"
+    	android:layout_centerHorizontal="true"
+    	android:layout_below="@+id/time_remaining_2"
+    	android:layout_marginTop="6dp"
+    	android:textSize="20sp"
+    	android:textColor="#ffffff"/>
+    
+    
+    <ImageButton
+        android:id ="@+id/plus_time_2"
+        android:layout_width="48dp"
+    	android:layout_height="48dp"
+    	android:layout_alignParentRight="true"
+    	android:layout_alignTop="@+id/countdown_2"
+    	android:layout_marginTop="16.5dp"
+        android:layout_marginRight="52dp"
+    	android:src="@drawable/increase_button"
+    	android:scaleType="centerInside"
+    	android:background="@android:color/transparent"
+    	/>
+    
+    <ImageButton
+        android:id ="@+id/minus_time_2"
+        android:layout_width="48dp"
+    	android:layout_height="48dp"
+    	android:layout_alignParentLeft="true"
+    	android:layout_marginLeft="52dp"
+    	android:layout_alignTop="@+id/countdown_2"
+    	android:layout_marginTop="16.5dp"
+    	android:src="@drawable/reduse_button"
+    	android:scaleType="centerInside"
+    	android:background="@android:color/transparent"
+    	/> 
+    	
+</RelativeLayout>
+

@@ -1,0 +1,84 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="org.wondertech.wonder.EnableDriving">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5"
+        android:background="#2d2d2d"
+        android:id="@+id/enable_layout">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/enable_text"
+            android:layout_marginLeft="20dp"
+            android:textSize="30sp"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="40dp"
+            />
+        <ImageView
+            android:id="@+id/enable_car"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/enable_text"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/car_and_road"
+            android:background="@android:color/transparent"/>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="How does it work?"
+                android:textColor="#ffffff"
+                android:id="@+id/enable_how"
+                android:layout_marginBottom="10dp"
+                />
+            <ImageButton
+                android:id="@+id/enable_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/enable_how"
+                android:src="@drawable/info"
+                android:background="@android:color/transparent"
+                android:layout_alignTop="@+id/enable_how"
+                android:layout_marginLeft="10dp"/>
+            </RelativeLayout>
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:background="#ffffff">
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/enable_enable"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"
+            android:src="@drawable/enable_button"
+            android:background="@android:color/transparent"/>
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/enable_disable"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/enable_enable"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/i_dont_drive_button"
+            android:background="@android:color/transparent"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

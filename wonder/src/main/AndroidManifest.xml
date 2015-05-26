@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.wondertech.wonder"
+    android:versionCode="14"
+    android:versionName="1.50" >
+
+    <uses-sdk
+        android:minSdkVersion="17"
+        android:targetSdkVersion="21" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="com.google.android.gms.permission.ACTIVITY_RECOGNITION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="org.wondertech.wonder.permission.C2D_MESSAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name= "com.samsung.android.providers.context.permission.WRITE_USE_APP_FEATURE_SURVEY"/>
+
+    <application
+        android:icon="@drawable/biglogo"
+        android:label="@string/app_name"
+        android:theme="@style/CustomActionBarTheme"
+        android:name="android.support.multidex.MultiDexApplication">
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <receiver
+            android:name=".GcmBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+
+                <category android:name="org.wondertech.wonder" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name=".services.GCMNotificationIntentService" />
+
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".RegisterActivity"
+            android:label="@string/title_activity_register"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" >
+        </activity>
+        <activity
+            android:name=".VerifyActivity"
+            android:label="@string/title_activity_verify"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysVisible|adjustResize" >
+        </activity>
+        <activity
+            android:name=".SetDrivingActivity"
+            android:label="@string/title_activity_set_driving"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".LeaveMessageActivity"
+            android:label="@string/title_activity_leave_message"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysVisible|adjustResize" >
+        </activity>
+        <activity
+            android:name=".GetMessageActivity"
+            android:label="@string/title_activity_get_message"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".HelpActivity"
+            android:label="@string/title_activity_help"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".SplashActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Start" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".IntroActivity"
+            android:label="@string/title_activity_intro"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".FirstDriverActivity"
+            android:label="@string/title_activity_first_driver"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".LaunchActivity"
+            android:label="@string/title_activity_launch"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".InviteActivity"
+            android:label="@string/title_activity_invite"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="org.wondertech.wonder.IntroActivity" />
+        </activity>
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/title_activity_settings"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <service
+            android:name=".services.ActivityRecognitionIntentService"
+            android:exported="false"
+            android:label="@string/app_name" >
+        </service>
+
+        <activity
+            android:name=".DrivingLogActivity"
+            android:label="@string/title_activity_driving_log"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".CallActivity"
+            android:label="@string/title_activity_call"
+            android:parentActivityName=".GetMessageActivity"
+            android:screenOrientation="portrait" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="org.wondertech.wonder.GetMessageActivity" />
+        </activity>
+        <activity
+            android:name=".VOIPActivity"
+            android:label="@string/title_activity_voip"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".WebActivity"
+            android:label="@string/title_activity_web"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".SettingsActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="org.wondertech.wonder.SettingsActivity" />
+        </activity>
+
+        <receiver android:name=".BootReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" >
+                </action>
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".SMSreceiver" >
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" >
+                </action>
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name=".InviteMessageActivity"
+            android:label="@string/title_activity_invite_message"
+            android:parentActivityName=".InviteActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysVisible|adjustResize" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="org.wondertech.wonder.InviteActivity" />
+        </activity>
+
+        <meta-data
+            android:name="com.crashlytics.ApiKey"
+            android:value="57d538db5f2b325bcdbbf4856cb58065c80126da" />
+
+        <service
+            android:name=".services.LocationService"
+            android:exported="false" >
+        </service>
+
+        <activity
+            android:name=".NewVerifyActivity"
+            android:label="@string/title_activity_new_verify"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".SellingAnimation"
+            android:label="@string/title_activity_selling_animation"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".DistractDriving"
+            android:label="@string/title_activity_distract_driving"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".WhoisDriving"
+            android:label="@string/title_activity_whois_driving"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".ProtectDriver"
+            android:label="@string/title_activity_protect_driver"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".AutoResponse"
+            android:label="@string/title_activity_auto_response"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".EnableDriving"
+            android:label="@string/title_activity_enable_driving"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".DetectionDescription"
+            android:label="@string/title_activity_detection_description"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".VerifyMessage"
+            android:label="@string/title_activity_verify_message"
+            android:screenOrientation="portrait">
+        </activity>
+        <service android:name="com.zendrive.sdk.services.UserActivityService" />
+        <service android:name="com.zendrive.sdk.services.ZendriveService" />
+        <service android:name=".services.ContactService" />
+        <service android:name=".services.VOIPService"/>
+        <service android:name=".services.DetectionDrivingService"/>
+        <provider
+            android:authorities="org.wondertech.wonder"
+            android:name=".data.WonderProvider" />
+    </application>
+
+</manifest>

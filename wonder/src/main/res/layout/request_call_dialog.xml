@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#ffffff"
+     >
+     <TextView 
+	    android:layout_width="match_parent"
+    	android:layout_height="60dp"
+    	android:gravity="center"
+    	android:textColor="#ffffff"
+    	android:background="#40abff"
+    	android:text="Have Them Call"
+    	android:textSize="25sp"/>
+     
+   	<LinearLayout
+   	    android:layout_width="match_parent"
+    	android:layout_height="101dp"
+    	android:orientation="horizontal">
+    	<FrameLayout
+    	    android:layout_marginTop="5dp" 
+    	    android:layout_width="0dp"
+   	        android:layout_weight="180"
+    		android:layout_height="match_parent">
+    	    <ImageView
+		       	android:layout_width="match_parent"
+	    		android:layout_height="match_parent"
+			    android:background="@android:color/transparent"
+			    android:scaleType="centerInside"
+			    android:src="@drawable/profile_picture"/> 
+    	    <TextView 
+		        android:id="@+id/request_call_initials"
+			    android:layout_width="match_parent"
+	    		android:layout_height="match_parent"
+			    android:gravity="center"
+    			android:textColor="#ffffff"
+    			android:textSize="29sp"/>    	     
+    	</FrameLayout>
+   	    <TextView 
+   	        android:id="@+id/request_call_text"
+   	        android:layout_width="0dp"
+   	        android:layout_weight="494"
+    		android:layout_height="match_parent"
+    		android:gravity="center_vertical|left"
+			android:layout_marginLeft="30dp"
+    		android:textSize="19sp"
+    		android:textColor="#5f5f5f"
+    		/>
+   	</LinearLayout>
+    	
+	<ImageButton 
+	    android:id="@+id/request_call_confirm"
+	    android:layout_width="match_parent"
+    	android:layout_height="70dp"
+    	android:src="@drawable/requestbuttonconfirm"
+    	android:background="@android:color/transparent"
+    	android:layout_gravity="bottom"
+    	android:scaleType="centerInside"
+		android:layout_marginLeft="10dp"
+		android:layout_marginRight="10dp"/>
+
+</LinearLayout>

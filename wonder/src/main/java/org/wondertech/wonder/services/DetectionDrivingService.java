@@ -16,6 +16,7 @@ import com.google.android.gms.common.api.PendingResult;
 import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.location.ActivityRecognition;
+import com.samsung.android.sdk.motion.Smotion;
 import com.zendrive.sdk.DriveInfo;
 import com.zendrive.sdk.DriveStartInfo;
 import com.zendrive.sdk.Zendrive;
@@ -67,6 +68,11 @@ public class DetectionDrivingService extends Service implements GoogleApiClient.
                         .build();
         //mGoogleApiClient.connect();
 
+        Smotion mMotion = new Smotion(); try {
+            mMotion.initialize(this);
+        } catch (IllegalArgumentException e) {
+            // Error handling
+        }
 
 
         // Zendrive SDK setup

@@ -23,7 +23,7 @@ import java.util.TimerTask;
  * Created by xiyu on 5/26/15.
  */
 public class CheckMotionDetectionService extends Service {
-    private static final long TIMEDELAY = 30000;
+    private static final long TIMEDELAY = 500000;
     private Smotion mMotion;
     private SmotionActivityNotification mActivityNotification;
     private SmotionActivityNotification.InfoFilter mFilter;
@@ -32,13 +32,13 @@ public class CheckMotionDetectionService extends Service {
     private static long lastDriveTime = 0;
     private static SharedPreferences userInfo;
     private CountDownTimer cdt;
+    private static final int EXPIREMINUTES = 4;
 
 
     @Override
     public void onCreate() {
         super.onCreate();
         userInfo = getSharedPreferences("user_info", 0);
-        Log.v(TAG, "task run");
         TimerTask ttask = new TimerTask() {
             public void run() {
                 if (ActivityRecognitionIntentService.count == 0){
@@ -102,7 +102,7 @@ public class CheckMotionDetectionService extends Service {
                             
                             if (cdt != null)
                                 cdt.cancel();
-                            cdt = new CountDownTimer(4 * 60000, 60000) {
+                            cdt = new CountDownTimer(EXPIREMINUTES * 60000, 60000) {
 
                                 public void onTick(long millisUntilFinished) {
 

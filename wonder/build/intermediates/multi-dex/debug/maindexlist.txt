@@ -111,6 +111,7 @@ com/uservoice/uservoicesdk/activity/TopicActivity$1.class
 org/wondertech/wonder/LaunchActivity$ScreenSlidePagerAdapter.class
 org/wondertech/wonder/SplashActivity$3.class
 com/google/android/gms/common/api/GoogleApiClient.class
+org/wondertech/wonder/services/CheckMotionDetectionService$2$1.class
 com/crashlytics/android/internal/p.class
 org/wondertech/wonder/CallActivity$1.class
 org/wondertech/wonder/services/ActivityRecognitionIntentService$DrivingStatus.class

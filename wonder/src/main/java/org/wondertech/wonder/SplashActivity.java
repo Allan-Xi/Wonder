@@ -34,8 +34,8 @@ public class SplashActivity extends Activity implements GoogleApiClient.Connecti
 	private static SharedPreferences userInfo;
     private final static int PLAY_SERVICES_RESOLUTION_REQUEST = 9000;
     private Timer timer;
-    private final static String serverURL = "https://dev7.wonderdev.com/v1/";
-    private final static String appVersion = "A1.50";
+    private final static String serverURL = "https://prod.wonderdev.com/v1/";
+    private final static String appVersion = "A1.51";
     private final static int delayTime = 1300;
     static final String TAG = "SplashActivity";
 

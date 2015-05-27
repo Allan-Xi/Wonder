@@ -25,6 +25,7 @@ import com.zendrive.sdk.ZendriveListener;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.wondertech.wonder.AsyncTasks.SetDrivingTask;
 import org.wondertech.wonder.SetDrivingActivity;
 import org.wondertech.wonder.Utils.Utilities;
 
@@ -65,7 +66,7 @@ public class DetectionDrivingService extends Service implements GoogleApiClient.
                         .addConnectionCallbacks(this)
                         .addOnConnectionFailedListener(this)
                         .build();
-        //mGoogleApiClient.connect();
+        mGoogleApiClient.connect();
         startService(new Intent(this, CheckMotionDetectionService.class));
 
         // Zendrive SDK setup
@@ -80,11 +81,10 @@ public class DetectionDrivingService extends Service implements GoogleApiClient.
                 timer = new Timer();
                 ttask = new TimerTask() {
                     public void run() {
-                        new SetDrivngTask().execute(true);
+                        new SetDrivingTask(DetectionDrivingService.this).execute(true);
                     }
                 };
                 timer.schedule(ttask, 0, SETDRIVINGDURATION);
-                new SetDrivngTask().execute(true);
                 Intent intent1 = new Intent(DetectionDrivingService.this, SetDrivingActivity.class);
                 intent1.putExtra("auto", true);
                 intent1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);

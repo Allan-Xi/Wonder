@@ -69,4 +69,5 @@ dependencies {
     compile 'com.android.support:multidex:1.0.0'
     compile files('libs/libphonenumber-7.0.5.jar')
     compile files('libs/motion-v2.2.0.jar')
+    compile files('libs/sdk-v1.0.0.jar')
 }

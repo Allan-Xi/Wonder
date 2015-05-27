@@ -39,6 +39,7 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -736,6 +737,7 @@ public class MainActivity extends FragmentActivity implements LoaderManager.Load
                         sb.append(line + "\n");
                     }
                     br.close();
+                    Log.v("Get Drivers", sb.toString());
                     JSONArray drivers = new JSONArray(sb.toString());
                     Cursor cur = getContentResolver().query(WonderContract.ContactEntry.CONTENT_URI,
                             null,
@@ -754,6 +756,30 @@ public class MainActivity extends FragmentActivity implements LoaderManager.Load
                             values.put(WonderContract.ContactEntry.COLUMN_NOTIFY, 0);
                             values.put(WonderContract.ContactEntry.COLUMN_LEAVE_MESSAGE, 0);
                             values.put(WonderContract.ContactEntry.COLUMN_REQUEST_CALL, 0);
+                            getContentResolver().update(WonderContract.ContactEntry.CONTENT_URI,
+                                    values,
+                                    WonderContract.ContactEntry.COLUMN_RAW_ID + " =?",
+                                    new String[]{id}
+                            );
+                        }
+                    }finally {
+                        cur.close();
+                    }
+
+                    cur = getContentResolver().query(WonderContract.ContactEntry.CONTENT_URI,
+                            null,
+                            WonderContract.ContactEntry.COLUMN_ON_WONDER + " =? AND "
+                                    + WonderContract.ContactEntry.COLUMN_DRIVING + " =?",
+                            new String[]{"1", "1"},
+                            null
+                    );
+                    try{
+                        final int idIndex = cur.getColumnIndex(WonderContract.ContactEntry.COLUMN_RAW_ID);
+                        while (cur.moveToNext()){
+                            String id = cur.getString(idIndex);
+                            Utilities.updateToAndroid(MainActivity.this, id, Utilities.ONORBIT);
+                            ContentValues values = new ContentValues();
+                            values.put(WonderContract.ContactEntry.COLUMN_DRIVING, 0);
                             getContentResolver().update(WonderContract.ContactEntry.CONTENT_URI,
                                     values,
                                     WonderContract.ContactEntry.COLUMN_RAW_ID + " =?",

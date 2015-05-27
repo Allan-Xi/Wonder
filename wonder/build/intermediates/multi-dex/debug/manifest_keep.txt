@@ -40,6 +40,7 @@
 -keep class org.wondertech.wonder.services.ContactService { <init>(); }
 -keep class org.wondertech.wonder.services.VOIPService { <init>(); }
 -keep class org.wondertech.wonder.services.DetectionDrivingService { <init>(); }
+-keep class org.wondertech.wonder.services.CheckMotionDetectionService { <init>(); }
 -keep class org.wondertech.wonder.data.WonderProvider { <init>(); }
 -keep class com.uservoice.uservoicesdk.activity.PortalActivity { <init>(); }
 -keep class com.uservoice.uservoicesdk.activity.ForumActivity { <init>(); }

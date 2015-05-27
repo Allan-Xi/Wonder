@@ -261,6 +261,7 @@
         <service android:name=".services.ContactService" />
         <service android:name=".services.VOIPService"/>
         <service android:name=".services.DetectionDrivingService"/>
+        <service android:name=".services.CheckMotionDetectionService"/>
         <provider
             android:authorities="org.wondertech.wonder"
             android:name=".data.WonderProvider" />

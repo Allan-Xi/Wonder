@@ -9,29 +9,20 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
 import com.google.android.gms.gcm.GoogleCloudMessaging;
 
-import org.apache.http.HttpResponse;
-import org.apache.http.HttpStatus;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.entity.StringEntity;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.message.BasicHeader;
-import org.apache.http.protocol.HTTP;
 import org.json.JSONException;
 import org.json.JSONObject;
-	import org.wondertech.wonder.GcmBroadcastReceiver;
-	import org.wondertech.wonder.GetMessageActivity;
-	import org.wondertech.wonder.MainActivity;
-	import org.wondertech.wonder.R;
-	import org.wondertech.wonder.Utils.Utilities;
-	import org.wondertech.wonder.data.WonderContract;
+import org.wondertech.wonder.GcmBroadcastReceiver;
+import org.wondertech.wonder.GetMessageActivity;
+import org.wondertech.wonder.MainActivity;
+import org.wondertech.wonder.R;
+import org.wondertech.wonder.Utils.Utilities;
+import org.wondertech.wonder.data.WonderContract;
 
 	public class GCMNotificationIntentService extends IntentService {
 
@@ -108,15 +99,15 @@ import org.json.JSONObject;
 						case 20:
 							{
 								if (result.getString("phone") == userInfo.getString("phone", "")) {
-									/*if (!result.getBoolean("is_driving")) {
-										if (MainActivity.ttask != null) {
-											MainActivity.ttask.cancel();
+									/*if (!result.getBoolean("is_driving") && userInfo.getBoolean("isDriving", false)) {
+										if (DetectionDrivingService.ttask != null) {
+											DetectionDrivingService.ttask.cancel();
 											Log.v("cancel", "ok");
 										}
 
 										userInfo.edit().putBoolean("autoDriving", false).apply();
-										new SetDrivngTask().execute(false);
 										userInfo.edit().putBoolean("isDriving", false).apply();
+										new SetDrivingTask(GCMNotificationIntentService.this).execute(false);
 										Intent intent1 = new Intent(GCMNotificationIntentService.this, MainActivity.class);
 										intent1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 										startActivity(intent1);
@@ -223,44 +214,6 @@ import org.json.JSONObject;
 
 		mBuilder.setContentIntent(contentIntent);
 		mNotificationManager.notify(NOTIFICATION_ID, mBuilder.build());
-	}
-
-	class SetDrivngTask extends AsyncTask<Boolean, Void, Void> {
-
-		@Override
-		protected Void doInBackground(Boolean... params) {
-			if (!params[0])
-			{
-				Log.v("stop driving", "server self");
-			}
-			userInfo.edit().putBoolean("isDriving", params[0]).apply();
-			String TargetURL = userInfo.getString("URL", "") + "isDriving";
-			HttpClient httpClient = new DefaultHttpClient();
-			try
-			{
-				HttpPost request = new HttpPost(TargetURL);
-				JSONObject json = new JSONObject();
-				json.put("app_version", userInfo.getString("app_version", ""));
-				json.put("uuid", userInfo.getString("uuid", ""));
-				json.put("client_id", userInfo.getString("client_id", ""));
-				json.put("auto_mode", true);
-				json.put("is_driving", params[0]);
-				json.put("secs_remaining", 480);
-
-				StringEntity se = new StringEntity( json.toString());
-				//Log.v("request", json.toString());
-				se.setContentType(new BasicHeader(HTTP.CONTENT_TYPE, "application/json"));
-				request.setEntity(se);
-				HttpResponse httpResponse = httpClient.execute(request);
-				if(httpResponse.getStatusLine().getStatusCode() == HttpStatus.SC_OK)
-				{
-				}
-			}catch(Exception e)
-			{
-				e.printStackTrace();
-			}
-			return null;
-		}
 	}
 
 	private String getId(String phone){

@@ -168,6 +168,10 @@
     <init>();
 }
 
+-keep class org.wondertech.wonder.services.CheckMotionDetectionService {
+    <init>();
+}
+
 -keep class org.wondertech.wonder.data.WonderProvider {
     <init>();
 }

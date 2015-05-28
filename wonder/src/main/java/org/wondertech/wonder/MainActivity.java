@@ -588,7 +588,8 @@ public class MainActivity extends FragmentActivity implements LoaderManager.Load
                         Cursor cur = getContentResolver().query(
                                 WonderContract.ContactEntry.CONTENT_URI,
                                 new String[]{WonderContract.ContactEntry.COLUMN_RAW_ID,
-                                        WonderContract.ContactEntry.COLUMN_PHONE},
+                                        WonderContract.ContactEntry.COLUMN_PHONE,
+                                        WonderContract.ContactEntry.COLUMN_ON_WONDER},
                                 WonderContract.ContactEntry.COLUMN_PHONE + " =?",
                                 new String[]{phone},
                                 null
@@ -602,6 +603,17 @@ public class MainActivity extends FragmentActivity implements LoaderManager.Load
                                     Utilities.updateToAndroid(MainActivity.this, id, Utilities.DRIVING);
                                 } else {
                                     Utilities.updateToAndroid(MainActivity.this, id, Utilities.ONORBIT);
+                                }
+                                int onWonderIndex = cur.getColumnIndex(WonderContract.ContactEntry.COLUMN_ON_WONDER);
+                                int onWonder = cur.getInt(onWonderIndex);
+                                if (onWonder == 0){
+                                    ContentValues values = new ContentValues();
+                                    values.put(WonderContract.ContactEntry.COLUMN_ON_WONDER, 1);
+                                    getContentResolver().update(WonderContract.ContactEntry.CONTENT_URI,
+                                            values,
+                                            WonderContract.ContactEntry.COLUMN_PHONE + " =?",
+                                            new String[]{phone}
+                                    );
                                 }
                             }finally {
                                 cur.close();

@@ -1,5 +1,5 @@
--injars /Users/xiyu/Desktop/workspace/NavigationDrawer2/wonder/build/intermediates/multi-dex/release/allclasses.jar
--outjars /Users/xiyu/Desktop/workspace/NavigationDrawer2/wonder/build/intermediates/multi-dex/release/componentClasses.jar
+-injars /Users/xiyu/Desktop/workspace/Wonder/wonder/build/intermediates/multi-dex/release/allclasses.jar
+-outjars /Users/xiyu/Desktop/workspace/Wonder/wonder/build/intermediates/multi-dex/release/componentClasses.jar
 
 -libraryjars /Users/xiyu/Library/Android/sdk/build-tools/21.1.1/lib/shrinkedAndroid.jar
 
@@ -8,7 +8,7 @@
 -dontobfuscate
 -dontpreverify
 -dontwarn
--printconfiguration /Users/xiyu/Desktop/workspace/NavigationDrawer2/wonder/build/intermediates/multi-dex/release/components.flags
+-printconfiguration /Users/xiyu/Desktop/workspace/Wonder/wonder/build/intermediates/multi-dex/release/components.flags
 
 
 -keep class android.support.multidex.MultiDexApplication {
@@ -165,6 +165,10 @@
 }
 
 -keep class org.wondertech.wonder.services.DetectionDrivingService {
+    <init>();
+}
+
+-keep class org.wondertech.wonder.services.CheckMotionDetectionService {
     <init>();
 }
 

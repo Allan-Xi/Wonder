@@ -25,6 +25,7 @@ org/wondertech/wonder/services/ContactService.class
 android/support/multidex/MultiDexExtractor.class
 com/amazonaws/com/google/gson/annotations/Expose.class
 android/support/v4/app/LoaderManager.class
+org/wondertech/wonder/services/CheckMotionDetectionService$1.class
 org/wondertech/wonder/CallActivity.class
 com/uservoice/uservoicesdk/ui/SearchExpandListener.class
 javax/annotation/concurrent/Immutable.class
@@ -36,6 +37,7 @@ com/zendrive/sdk/services/UserActivityService.class
 com/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberFormat.class
 org/wondertech/wonder/GetMessageActivity$GetMessage.class
 org/wondertech/wonder/RegisterActivity$Register.class
+com/samsung/android/sdk/motion/Smotion.class
 org/wondertech/wonder/GetMessageActivity.class
 com/uservoice/uservoicesdk/ui/ContactAdapter.class
 com/uservoice/uservoicesdk/model/Article.class
@@ -53,6 +55,7 @@ org/wondertech/wonder/DetectionDescription.class
 org/wondertech/wonder/InviteActivity$3.class
 android/support/v7/app/ActionBarDrawerToggle$Delegate.class
 android/support/v7/widget/LinearLayoutCompat$OrientationMode.class
+com/samsung/android/sdk/SsdkUnsupportedException.class
 android/support/v4/app/FragmentActivity.class
 android/support/multidex/MultiDex.class
 org/wondertech/wonder/VerifyActivity$5.class
@@ -93,6 +96,7 @@ org/wondertech/wonder/VerifyActivity$GetVerificationCode.class
 android/support/v7/app/ActionBar$LayoutParams.class
 org/wondertech/wonder/GetMessageActivity$2.class
 org/wondertech/wonder/MainActivity.class
+com/samsung/android/sdk/motion/SmotionActivityNotification$a.class
 android/support/v4/widget/MaterialProgressDrawable$StartCurveInterpolator.class
 android/support/annotation/Nullable.class
 org/wondertech/wonder/data/WonderContract$ContactEntry.class
@@ -103,11 +107,11 @@ javax/annotation/MatchesPattern.class
 org/wondertech/wonder/IntroActivity$6.class
 android/support/annotation/ArrayRes.class
 org/wondertech/wonder/VOIPActivity$3.class
-org/wondertech/wonder/services/GCMNotificationIntentService$SetDrivngTask.class
 com/uservoice/uservoicesdk/activity/TopicActivity$1.class
 org/wondertech/wonder/LaunchActivity$ScreenSlidePagerAdapter.class
 org/wondertech/wonder/SplashActivity$3.class
 com/google/android/gms/common/api/GoogleApiClient.class
+org/wondertech/wonder/services/CheckMotionDetectionService$2$1.class
 com/crashlytics/android/internal/p.class
 org/wondertech/wonder/CallActivity$1.class
 org/wondertech/wonder/services/ActivityRecognitionIntentService$DrivingStatus.class
@@ -165,6 +169,7 @@ com/google/android/gms/common/GooglePlayServicesUtil.class
 org/wondertech/wonder/NewVerifyActivity$5.class
 android/support/v7/widget/LinearLayoutCompat$DividerMode.class
 android/support/v4/app/FragmentManagerImpl$2.class
+com/samsung/android/sdk/motion/SmotionActivityNotification$ChangeListener.class
 org/wondertech/wonder/SetDrivingActivity.class
 org/wondertech/wonder/SettingsActivity$4.class
 org/wondertech/wonder/InviteActivity$GetInvites.class
@@ -215,6 +220,7 @@ javax/annotation/meta/Exhaustive.class
 org/wondertech/wonder/NewVerifyActivity$3.class
 android/support/annotation/DrawableRes.class
 com/uservoice/uservoicesdk/activity/ForumActivity$5.class
+com/samsung/android/sdk/motion/SmotionActivityNotification$InfoFilter.class
 com/uservoice/uservoicesdk/activity/BaseActivity.class
 org/wondertech/wonder/VerifyActivity.class
 android/support/multidex/ZipUtil$CentralDirectory.class
@@ -252,6 +258,7 @@ org/wondertech/wonder/VerifyActivity$6.class
 org/wondertech/wonder/LeaveMessageActivity$1.class
 android/support/v4/app/LoaderManagerImpl.class
 org/wondertech/wonder/MainActivity$DrawerItemClickListener.class
+org/wondertech/wonder/services/CheckMotionDetectionService.class
 org/wondertech/wonder/AutoResponse$FinalizeRegistration.class
 org/wondertech/wonder/IntroActivity$5.class
 android/support/v4/app/FragmentManagerImpl$4.class
@@ -262,10 +269,13 @@ javax/annotation/PropertyKey.class
 android/support/v4/app/FragmentManagerState.class
 org/wondertech/wonder/InviteActivity$4.class
 org/wondertech/wonder/MainActivity$1.class
+com/samsung/android/sdk/motion/SmotionActivityNotification.class
 android/support/v4/view/PagerAdapter.class
 com/google/gson/Gson.class
 com/google/android/gms/common/api/ResultCallback.class
+com/samsung/android/sdk/SsdkInterface.class
 javax/annotation/RegEx.class
+org/wondertech/wonder/services/CheckMotionDetectionService$2.class
 javax/annotation/Syntax.class
 javax/annotation/CheckForNull.class
 com/amazonaws/com/google/gson/annotations/Until.class
@@ -287,6 +297,7 @@ com/uservoice/uservoicesdk/R$layout.class
 org/apache/http/annotation/Immutable.class
 com/google/gson/annotations/SerializedName.class
 org/wondertech/wonder/services/DetectionDrivingService$SetDrivngTask.class
+com/samsung/android/sdk/motion/b.class
 org/wondertech/wonder/FirstDriverActivity$1.class
 org/wondertech/wonder/services/ActivityRecognitionIntentService$SetDrivngTask.class
 org/wondertech/wonder/InviteActivity.class
@@ -346,6 +357,7 @@ org/wondertech/wonder/VerifyActivity$1.class
 com/uservoice/uservoicesdk/R$id.class
 android/support/v4/widget/MaterialProgressDrawable$Ring.class
 org/wondertech/wonder/R$xml.class
+com/samsung/android/sdk/motion/SmotionActivityNotification$Info.class
 org/wondertech/wonder/SplashActivity$2.class
 org/wondertech/wonder/IntroActivity$7.class
 android/support/v4/app/SuperNotCalledException.class
@@ -457,7 +469,9 @@ org/wondertech/wonder/adapter/drawerAdapter.class
 com/uservoice/uservoicesdk/activity/TopicActivity.class
 org/wondertech/wonder/InviteActivity$5.class
 com/uservoice/uservoicesdk/activity/ArticleActivity$2.class
+com/samsung/android/sdk/SsdkVendorCheck.class
 com/uservoice/uservoicesdk/ui/PortalAdapter.class
+org/wondertech/wonder/AsyncTasks/SetDrivingTask.class
 org/wondertech/wonder/services/ContactService$GetOrbit.class
 android/support/v4/app/ActionBarDrawerToggle$DelegateProvider.class
 com/google/android/gms/common/internal/safeparcel/SafeParcelable.class

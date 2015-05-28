@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.LoaderManager;
 import android.app.ProgressDialog;
+import android.content.ContentValues;
 import android.content.CursorLoader;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -357,8 +358,8 @@ public class InviteActivity extends Activity implements LoaderManager.LoaderCall
 		} else {
 			Amplitude.logEvent("Invite View Opened");
 		}
-		if (adapter != null)
-			adapter.notifyDataSetChanged();
+		new GetOrbit().execute();
+
 	}
 	@Override
     public void onPause() {
@@ -429,6 +430,119 @@ public class InviteActivity extends Activity implements LoaderManager.LoaderCall
 		super.onDestroy();
 		if (cursor != null){
 			cursor.close();
+		}
+	}
+
+	private class GetOrbit extends AsyncTask<Void, Void, Void> {
+		@Override
+		protected Void doInBackground(Void... params) {
+			String TargetURL = userInfo.getString("URL", "") + "getOrbit";
+			HttpURLConnection urlConnection = null;
+			StringBuilder sb = new StringBuilder();
+			try
+			{
+				URL url = new URL(TargetURL);
+				urlConnection = (HttpURLConnection) url.openConnection();
+				urlConnection.setDoOutput(true);
+				urlConnection.setRequestMethod("POST");
+				urlConnection.setUseCaches(false);
+				urlConnection.setConnectTimeout(Utilities.CONNECTTIMEOUT);
+				urlConnection.setReadTimeout(Utilities.READTIMEOUT);
+				urlConnection.setRequestProperty("Content-Type", "application/json");
+				urlConnection.connect();
+
+				JSONObject json = new JSONObject();
+				json.put("client_id", userInfo.getString("client_id", ""));
+				json.put("uuid", userInfo.getString("uuid", ""));
+				json.put("app_version", userInfo.getString("app_version", ""));
+
+				OutputStreamWriter out = new OutputStreamWriter(urlConnection.getOutputStream());
+				try{
+					out.write(json.toString());
+				}
+				catch (IOException e) {
+					e.printStackTrace();
+				}
+				finally {
+					out.close();
+				}
+
+				int HttpResult =urlConnection.getResponseCode();
+				if(HttpResult ==HttpURLConnection.HTTP_OK){
+					BufferedReader br = new BufferedReader(new InputStreamReader(
+							urlConnection.getInputStream(),"utf-8"));
+					String line;
+					while ((line = br.readLine()) != null) {
+						sb.append(line + "\n");
+					}
+					br.close();
+					JSONObject result = new JSONObject(sb.toString());
+					JSONArray ja = result.getJSONArray("contacts");
+
+					for (int i = 0; i < ja.length(); i++) {
+						JSONObject jo = (JSONObject) ja.get(i);
+						String id;
+						String phone = jo.getString("phone");
+						Cursor cur = getContentResolver().query(
+								WonderContract.ContactEntry.CONTENT_URI,
+								new String[]{WonderContract.ContactEntry.COLUMN_RAW_ID,
+										WonderContract.ContactEntry.COLUMN_PHONE,
+										WonderContract.ContactEntry.COLUMN_ON_WONDER},
+								WonderContract.ContactEntry.COLUMN_PHONE + " =?",
+								new String[]{phone},
+								null
+						);
+						cur.moveToFirst();
+						if (cur.getCount() != 0){
+							try{
+								int idIndex = cur.getColumnIndex(WonderContract.ContactEntry.COLUMN_RAW_ID);
+								id = cur.getString(idIndex);
+								if (jo.getBoolean("is_driving")) {
+									Utilities.updateToAndroid(InviteActivity.this, id, Utilities.DRIVING);
+								} else {
+									Utilities.updateToAndroid(InviteActivity.this, id, Utilities.ONORBIT);
+								}
+								int onWonderIndex = cur.getColumnIndex(WonderContract.ContactEntry.COLUMN_ON_WONDER);
+								int onWonder = cur.getInt(onWonderIndex);
+								if (onWonder == 0){
+									ContentValues values = new ContentValues();
+									values.put(WonderContract.ContactEntry.COLUMN_ON_WONDER, 1);
+									getContentResolver().update(WonderContract.ContactEntry.CONTENT_URI,
+											values,
+											WonderContract.ContactEntry.COLUMN_PHONE + " =?",
+											new String[]{phone}
+									);
+								}
+							}finally {
+								cur.close();
+							}
+						}else{
+							cur.close();
+						}
+					}
+				}
+				else{
+					System.out.println(urlConnection.getResponseMessage());
+				}
+			} catch (MalformedURLException e) {
+
+				e.printStackTrace();
+			}
+			catch (IOException e) {
+
+				e.printStackTrace();
+
+			} catch (JSONException e) {
+
+				e.printStackTrace();
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally{
+				if(urlConnection!=null)
+					urlConnection.disconnect();
+			}
+			return null;
 		}
 	}
 }

@@ -84,7 +84,7 @@ public class InviteAdapter extends CursorAdapter {
             holder.photo.setAlpha(1f);
             holder.photo.setImageBitmap(photo);
         }
-        if (inVited == 1) {
+        if (inVited == 1 && onWonder == 0) {
             if (!t[0].isEmpty())
                 holder.firstName.setText("\uD83D\uDD58" + t[0]);
         } else if (onWonder == 1) {

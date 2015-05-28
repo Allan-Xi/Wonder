@@ -420,6 +420,7 @@ android/support/annotation/AttrRes.class
 org/wondertech/wonder/R$id.class
 org/wondertech/wonder/adapter/DriverAdapter.class
 org/wondertech/wonder/R$menu.class
+org/wondertech/wonder/InviteActivity$GetOrbit.class
 org/wondertech/wonder/data/WonderContract$NotificationEntry.class
 android/support/v4/widget/MaterialProgressDrawable$1.class
 android/support/v7/app/ActionBar$DisplayOptions.class

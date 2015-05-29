@@ -90,7 +90,7 @@ public class ActivityRecognitionIntentService extends IntentService {
 						startActivity(intent1);
 						startTime = currentTime;
 					}else {
-						if (currentTime - startTime > EXPIRETIME){
+						if (currentTime - startTime > EXPIRETIME && userInfo.getBoolean("autoDriving", true)){
 							new SetDrivingTask(ActivityRecognitionIntentService.this).execute(true);
 							startTime = currentTime;
 						}
@@ -100,12 +100,15 @@ public class ActivityRecognitionIntentService extends IntentService {
             {
 				if (count >= 30 && userInfo.getBoolean("isDriving", false) && driving < 3)
             	{
-					userInfo.edit().putBoolean("autoDriving", false).apply();
+					if (userInfo.getBoolean("autoDriving", true)){
+						new SetDrivingTask(ActivityRecognitionIntentService.this).execute(false);
+						Intent intent1 = new Intent(ActivityRecognitionIntentService.this, MainActivity.class);
+						intent1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+						startActivity(intent1);
+					}else {
+						userInfo.edit().putBoolean("autoDriving", true).apply();
+					}
 					userInfo.edit().putBoolean("isDriving", false).apply();
-					new SetDrivingTask(ActivityRecognitionIntentService.this).execute(false);
-					Intent intent1 = new Intent(ActivityRecognitionIntentService.this, MainActivity.class);
-					intent1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-					startActivity(intent1);
             	}
             }
         	

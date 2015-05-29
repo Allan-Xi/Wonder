@@ -150,7 +150,6 @@ org/wondertech/wonder/IntroActivity$8.class
 org/wondertech/wonder/GcmBroadcastReceiver.class
 android/support/v7/app/ActionBar.class
 com/uservoice/uservoicesdk/ui/SearchAdapter.class
-com/google/android/gms/location/LocationServices.class
 com/viewpagerindicator/CirclePageIndicator.class
 com/google/i18n/phonenumbers/Phonenumber.class
 android/support/v7/appcompat/R$styleable.class

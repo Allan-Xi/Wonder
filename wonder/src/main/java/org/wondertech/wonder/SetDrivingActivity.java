@@ -48,7 +48,6 @@ public class SetDrivingActivity extends Activity {
 			public void onClick(View v) {
 				new SetDrivingTask(SetDrivingActivity.this).execute(false);
 				userInfo.edit().putBoolean("autoDriving", false).apply();
-				userInfo.edit().putBoolean("isDriving", false).apply();
 				Intent intent1 = new Intent(SetDrivingActivity.this, MainActivity.class);
 				intent1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 				startActivity(intent1);

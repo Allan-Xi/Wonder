@@ -236,7 +236,7 @@ public class MainActivity extends FragmentActivity implements LoaderManager.Load
         super.onResume();
         new GetDrivers().execute();
         new GetOrbit().execute();
-        if (userInfo.getBoolean("isDriving", false)) {
+        if (userInfo.getBoolean("autoDriving", false)) {
             Intent intent = new Intent(MainActivity.this, SetDrivingActivity.class);
             intent.putExtra("auto", true);
             startActivity(intent);

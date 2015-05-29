@@ -65,10 +65,8 @@ com/google/android/gms/common/api/PendingResult.class
 org/wondertech/wonder/services/ContactService$DeleteMessage.class
 android/support/v4/widget/MaterialProgressDrawable$ProgressDrawableSize.class
 org/wondertech/wonder/VerifyActivity$2.class
-com/zendrive/sdk/ZendriveDriveDetectionMode.class
 org/wondertech/wonder/SetDrivingActivity$4.class
 android/support/annotation/InterpolatorRes.class
-org/wondertech/wonder/SetDrivingActivity$StopDrivngTask.class
 com/rebtel/repackaged/com/google/gson/annotations/Until.class
 javax/annotation/concurrent/GuardedBy.class
 android/support/multidex/MultiDexExtractor$1.class
@@ -210,7 +208,6 @@ android/support/v4/view/MenuItemCompat$OnActionExpandListener.class
 com/uservoice/uservoicesdk/flow/InitManager.class
 org/wondertech/wonder/SettingsActivity$1.class
 com/zendrive/sdk/services/ZendriveService$1.class
-org/wondertech/wonder/services/DetectionDrivingService$3.class
 org/wondertech/wonder/NewVerifyActivity$2.class
 org/wondertech/wonder/LeaveMessageActivity.class
 org/wondertech/wonder/VOIPActivity$startRTCCall.class
@@ -224,7 +221,6 @@ com/samsung/android/sdk/motion/SmotionActivityNotification$InfoFilter.class
 com/uservoice/uservoicesdk/activity/BaseActivity.class
 org/wondertech/wonder/VerifyActivity.class
 android/support/multidex/ZipUtil$CentralDirectory.class
-com/zendrive/sdk/ZendriveListener.class
 com/google/i18n/phonenumbers/NumberParseException.class
 javax/annotation/Tainted.class
 android/support/v7/app/ActionBarDrawerToggle.class
@@ -232,7 +228,6 @@ com/uservoice/uservoicesdk/ui/PaginatedAdapter.class
 android/support/v7/app/ActionBar$OnMenuVisibilityListener.class
 com/sinch/android/rtc/SinchClientBuilder.class
 org/wondertech/wonder/QuickContactHelper.class
-org/wondertech/wonder/services/DetectionDrivingService$2.class
 org/wondertech/wonder/EnableDriving$2.class
 android/support/annotation/StringDef.class
 org/wondertech/wonder/VOIPActivity.class
@@ -296,10 +291,8 @@ org/wondertech/wonder/WhoisDriving$3.class
 com/uservoice/uservoicesdk/R$layout.class
 org/apache/http/annotation/Immutable.class
 com/google/gson/annotations/SerializedName.class
-org/wondertech/wonder/services/DetectionDrivingService$SetDrivngTask.class
 com/samsung/android/sdk/motion/b.class
 org/wondertech/wonder/FirstDriverActivity$1.class
-org/wondertech/wonder/services/ActivityRecognitionIntentService$SetDrivngTask.class
 org/wondertech/wonder/InviteActivity.class
 android/support/annotation/IntegerRes.class
 org/wondertech/wonder/services/VOIPService.class

@@ -77,7 +77,7 @@ public class ActivityRecognitionIntentService extends IntentService {
 
 				Log.v(activityName, Integer.toString(confidence)+ "%");
 				Log.v("count", Integer.toString(count));
-				Log.v("driving", Integer.toString(count));
+				Log.v("driving", Integer.toString(driving));
 				if (driving > 2){
 					if (!userInfo.getBoolean("isDriving", false)) {
 						Log.v("start driving", "123");

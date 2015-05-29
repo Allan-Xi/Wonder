@@ -3,10 +3,8 @@ package org.wondertech.wonder.services;
 import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.IBinder;
-import android.preference.PreferenceManager;
 import android.util.Log;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -15,18 +13,6 @@ import com.google.android.gms.common.api.PendingResult;
 import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.location.ActivityRecognition;
-import com.zendrive.sdk.DriveInfo;
-import com.zendrive.sdk.DriveStartInfo;
-import com.zendrive.sdk.Zendrive;
-import com.zendrive.sdk.ZendriveConfiguration;
-import com.zendrive.sdk.ZendriveDriveDetectionMode;
-import com.zendrive.sdk.ZendriveListener;
-
-import org.wondertech.wonder.AsyncTasks.SetDrivingTask;
-import org.wondertech.wonder.SetDrivingActivity;
-
-import java.util.Timer;
-import java.util.TimerTask;
 
 /**
  * Created by xiyu on 5/14/15.
@@ -34,12 +20,8 @@ import java.util.TimerTask;
 public class DetectionDrivingService extends Service implements GoogleApiClient.ConnectionCallbacks,
         GoogleApiClient.OnConnectionFailedListener{
     static public GoogleApiClient mGoogleApiClient;
-    private static SharedPreferences userInfo;
     private PendingIntent mActivityRecognitionPendingIntent;
     private static long ACTIVITYRECOGNITIONDURATION = 10000;
-    private static long SETDRIVINGDURATION = 18000;
-    public static TimerTask ttask;
-    private Timer timer;
 
 
     @Override
@@ -50,7 +32,6 @@ public class DetectionDrivingService extends Service implements GoogleApiClient.
     @Override
     public void onCreate() {
         super.onCreate();
-        userInfo = getSharedPreferences("user_info", 0);
         mGoogleApiClient =
                 new GoogleApiClient.Builder(this)
                         .addApi(ActivityRecognition.API)
@@ -59,60 +40,6 @@ public class DetectionDrivingService extends Service implements GoogleApiClient.
                         .build();
         mGoogleApiClient.connect();
         startService(new Intent(this, CheckMotionDetectionService.class));
-
-        // Zendrive SDK setup
-        String zendriveApplicationKey = "mTudUAta3fHPkaGvAOd69AednG1Ezpa8";   // Your Zendrive SDK Key
-        String driveID = userInfo.getString("phone", "");
-        ZendriveListener zendriveListener = new ZendriveListener() {
-            @Override
-            public void onDriveStart(DriveStartInfo driveStartInfo) {
-                Log.v("start driving", "123");
-                userInfo.edit().putBoolean("isDriving", true).apply();
-                userInfo.edit().putBoolean("autoDriving", true).apply();
-                timer = new Timer();
-                ttask = new TimerTask() {
-                    public void run() {
-                        new SetDrivingTask(DetectionDrivingService.this).execute(true);
-                    }
-                };
-                timer.schedule(ttask, 0, SETDRIVINGDURATION);
-                Intent intent1 = new Intent(DetectionDrivingService.this, SetDrivingActivity.class);
-                intent1.putExtra("auto", true);
-                intent1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(intent1);
-            }
-
-
-            @Override
-            public void onDriveEnd(DriveInfo driveInfo) {
-                Log.v("stop driving", "123");
-            }
-        };
-
-
-        ZendriveConfiguration zendriveConfiguration = new ZendriveConfiguration(
-                zendriveApplicationKey, driveID, ZendriveDriveDetectionMode.AUTO_OFF);
-
-        if (PreferenceManager.getDefaultSharedPreferences(DetectionDrivingService.this)
-                .getBoolean("detectDriving", false))
-        {
-            Zendrive.setup(
-                    this.getApplicationContext(),
-                    zendriveConfiguration,
-                    zendriveListener,                 // can be null.
-                    new Zendrive.SetupCallback() {
-                        @Override
-                        public void onSetup(boolean success) {
-                            if (success) {
-                                Log.v("zen", "success");
-                            } else {
-                                Log.v("zen", "fail");
-                            }
-                        }
-                    }
-            );
-        }
-
     }
 
     @Override
@@ -153,7 +80,6 @@ public class DetectionDrivingService extends Service implements GoogleApiClient.
                 }
             }
         });
-        //Log.v("motion detection", "connected");
     }
 
     @Override

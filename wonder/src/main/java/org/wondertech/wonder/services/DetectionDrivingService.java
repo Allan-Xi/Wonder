@@ -4,7 +4,6 @@ import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.preference.PreferenceManager;
@@ -23,17 +22,9 @@ import com.zendrive.sdk.ZendriveConfiguration;
 import com.zendrive.sdk.ZendriveDriveDetectionMode;
 import com.zendrive.sdk.ZendriveListener;
 
-import org.json.JSONException;
-import org.json.JSONObject;
 import org.wondertech.wonder.AsyncTasks.SetDrivingTask;
 import org.wondertech.wonder.SetDrivingActivity;
-import org.wondertech.wonder.Utils.Utilities;
 
-import java.io.IOException;
-import java.io.OutputStreamWriter;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -95,13 +86,6 @@ public class DetectionDrivingService extends Service implements GoogleApiClient.
             @Override
             public void onDriveEnd(DriveInfo driveInfo) {
                 Log.v("stop driving", "123");
-                /*ttask.cancel();
-                userInfo.edit().putBoolean("autoDriving", false).apply();
-                userInfo.edit().putBoolean("isDriving", false).apply();
-                new SetDrivngTask().execute(false);
-                Intent intent1 = new Intent(DetectionDrivingService.this, MainActivity.class);
-                intent1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(intent1);*/
             }
         };
 
@@ -180,69 +164,5 @@ public class DetectionDrivingService extends Service implements GoogleApiClient.
     @Override
     public void onConnectionFailed(ConnectionResult connectionResult) {
         Log.v("motion detection", "Failed");
-    }
-
-    class SetDrivngTask extends AsyncTask<Boolean, Void, Void> {
-
-        @Override
-        protected Void doInBackground(Boolean... params) {
-            if (params[0])
-            {
-                Log.v("driving", "server");
-            }
-            else
-                Log.v("stop driving", "server");
-            String TargetURL = userInfo.getString("URL", "") + "isDriving";
-            HttpURLConnection urlConnection = null;
-            try {
-                URL url = new URL(TargetURL);
-                urlConnection = (HttpURLConnection) url.openConnection();
-                urlConnection.setDoOutput(true);
-                urlConnection.setRequestMethod("POST");
-                urlConnection.setUseCaches(false);
-                urlConnection.setConnectTimeout(Utilities.CONNECTTIMEOUT);
-                urlConnection.setReadTimeout(Utilities.READTIMEOUT);
-                urlConnection.setRequestProperty("Content-Type", "application/json");
-                urlConnection.connect();
-
-                JSONObject json = new JSONObject();
-                json.put("app_version", userInfo.getString("app_version", ""));
-                json.put("uuid", userInfo.getString("uuid", ""));
-                json.put("client_id", userInfo.getString("client_id", ""));
-                json.put("auto_mode", true);
-                json.put("is_driving", params[0]);
-                json.put("secs_remaining", 240);
-
-                OutputStreamWriter out = new OutputStreamWriter(urlConnection.getOutputStream());
-                try {
-                    out.write(json.toString());
-                } catch (IOException e) {
-                    e.printStackTrace();
-                } finally {
-                    out.close();
-                }
-
-                int HttpResult = urlConnection.getResponseCode();
-                if (HttpResult == HttpURLConnection.HTTP_OK) {
-                } else {
-                    System.out.println(urlConnection.getResponseMessage());
-                }
-            } catch (MalformedURLException e) {
-
-                e.printStackTrace();
-            } catch (IOException e) {
-
-                e.printStackTrace();
-
-            } catch (JSONException e) {
-
-                e.printStackTrace();
-
-            } finally {
-                if (urlConnection != null)
-                    urlConnection.disconnect();
-            }
-            return null;
-        }
     }
 }

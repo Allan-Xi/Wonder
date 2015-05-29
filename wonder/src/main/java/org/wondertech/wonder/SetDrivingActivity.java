@@ -16,8 +16,6 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import com.zendrive.sdk.Zendrive;
-
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
 import org.apache.http.client.HttpClient;
@@ -27,6 +25,7 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicHeader;
 import org.apache.http.protocol.HTTP;
 import org.json.JSONObject;
+import org.wondertech.wonder.AsyncTasks.SetDrivingTask;
 
 public class SetDrivingActivity extends Activity {
 	private SharedPreferences userInfo;
@@ -47,13 +46,12 @@ public class SetDrivingActivity extends Activity {
 		endtrip.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
+				new SetDrivingTask(SetDrivingActivity.this).execute(false);
+				userInfo.edit().putBoolean("autoDriving", false).apply();
 				userInfo.edit().putBoolean("isDriving", false).apply();
-				Zendrive.stopDrive();
-				new StopDrivngTask().execute();
-				/*if (getIntent().hasExtra("auto"))
-				{
-					userInfo.edit().putBoolean("manualStop", true).apply();
-				}*/
+				Intent intent1 = new Intent(SetDrivingActivity.this, MainActivity.class);
+				intent1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+				startActivity(intent1);
 			}
 		});
 
@@ -87,7 +85,7 @@ public class SetDrivingActivity extends Activity {
 		     }
 
 		     public void onFinish() {
-		    	 new StopDrivngTask().execute();
+		    	 new SetDrivingTask(SetDrivingActivity.this).execute(false);
 		     }
 		  };
 		  cdt.start();
@@ -114,7 +112,7 @@ public class SetDrivingActivity extends Activity {
 				     }
 
 				     public void onFinish() {
-				    	 new StopDrivngTask().execute();
+				    	 new SetDrivingTask(SetDrivingActivity.this).execute(false);
 				     }
 				  };
 				  cdt.start();
@@ -142,7 +140,7 @@ public class SetDrivingActivity extends Activity {
 					 }
 
 				     public void onFinish() {
-				    	 new StopDrivngTask().execute();
+				    	 new SetDrivingTask(SetDrivingActivity.this).execute(false);
 				     }
 				  };
 				  cdt.start();
@@ -185,46 +183,7 @@ public class SetDrivingActivity extends Activity {
 			return null;
         }
     }
-
-	class StopDrivngTask extends AsyncTask<Void, Void, Void> {
-
-        @Override
-        protected Void doInBackground(Void... params) {
-        	userInfo.edit().putBoolean("isDriving", false).apply();
-        	String TargetURL = userInfo.getString("URL", "") + "isDriving";
-			HttpClient httpClient = new DefaultHttpClient();
-			try
-			{
-				HttpPost request = new HttpPost(TargetURL);
-	            JSONObject json = new JSONObject();
-	            json.put("app_version", userInfo.getString("app_version", ""));
-	            json.put("uuid", userInfo.getString("uuid", ""));
-	            json.put("client_id", userInfo.getString("client_id", ""));
-	            json.put("auto_mode", false);
-	            json.put("is_driving", false);
-	            json.put("secs_remaining", 0);
-
-	            StringEntity se = new StringEntity( json.toString());
-	            Log.v("request", json.toString());
-	            se.setContentType(new BasicHeader(HTTP.CONTENT_TYPE, "application/json"));
-	            request.setEntity(se);
-				HttpResponse httpResponse = httpClient.execute(request);
-				if(httpResponse.getStatusLine().getStatusCode() == HttpStatus.SC_OK)
-				{
-					Log.v("isDriving", "stopDriving");
-				}
-			}catch(Exception e)
-			{
-				e.printStackTrace();
-			}
-			return null;
-        }
-        @Override
-		protected void onPostExecute(Void result) {
-	        startActivity(new Intent(SetDrivingActivity.this, MainActivity.class));
-		  }
-    }
-
+	
 	@Override
 	public void onBackPressed() {
 	}

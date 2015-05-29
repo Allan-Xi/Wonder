@@ -109,10 +109,6 @@ public class CheckMotionDetectionService extends Service {
                                 }
 
                                 public void onFinish() {
-                                    if (DetectionDrivingService.ttask != null) {
-                                        DetectionDrivingService.ttask.cancel();
-                                        Log.v("cancel", "ok");
-                                    }
                                     userInfo.edit().putBoolean("autoDriving", false).apply();
                                     userInfo.edit().putBoolean("isDriving", false).apply();
                                     new SetDrivingTask(CheckMotionDetectionService.this).execute(false);

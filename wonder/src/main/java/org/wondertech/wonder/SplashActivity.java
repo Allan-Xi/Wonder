@@ -17,20 +17,16 @@ import com.crashlytics.android.Crashlytics;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.location.LocationRequest;
-import com.google.android.gms.location.LocationServices;
 import com.uservoice.uservoicesdk.Config;
 import com.uservoice.uservoicesdk.UserVoice;
 
 import org.wondertech.wonder.Utils.Utilities;
-import org.wondertech.wonder.services.LocationService;
 
 import java.util.Timer;
 import java.util.TimerTask;
 
 
-public class SplashActivity extends Activity implements GoogleApiClient.ConnectionCallbacks,
-        GoogleApiClient.OnConnectionFailedListener{
+public class SplashActivity extends Activity{
 	private static SharedPreferences userInfo;
     private final static int PLAY_SERVICES_RESOLUTION_REQUEST = 9000;
     private Timer timer;
@@ -41,8 +37,6 @@ public class SplashActivity extends Activity implements GoogleApiClient.Connecti
 
     private PendingIntent mLocationPendingIntent;
     static public GoogleApiClient mGoogleApiClient;
-    private LocationRequest mLocationRequest;
-    private SharedPreferences userOrbit;
 
 
     @Override
@@ -126,25 +120,6 @@ public class SplashActivity extends Activity implements GoogleApiClient.Connecti
         if (timer != null){
             timer.cancel();
         }
-    }
-
-    @Override
-    public void onConnected(Bundle bundle) {
-        Intent intent1 = new Intent(this, LocationService.class);
-        mLocationPendingIntent = PendingIntent.getService(this, 0, intent1, PendingIntent.FLAG_UPDATE_CURRENT);
-        LocationServices.FusedLocationApi.requestLocationUpdates(
-                mGoogleApiClient, mLocationRequest, mLocationPendingIntent);
-
-    }
-
-    @Override
-    public void onConnectionSuspended(int i) {
-
-    }
-
-    @Override
-    public void onConnectionFailed(ConnectionResult connectionResult) {
-
     }
 
     private boolean checkPlayServices() {

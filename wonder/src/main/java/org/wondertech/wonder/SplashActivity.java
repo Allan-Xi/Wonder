@@ -35,7 +35,7 @@ public class SplashActivity extends Activity implements GoogleApiClient.Connecti
     private final static int PLAY_SERVICES_RESOLUTION_REQUEST = 9000;
     private Timer timer;
     private final static String serverURL = "https://prod.wonderdev.com/v1/";
-    private final static String appVersion = "A1.51";
+    private final static String appVersion = "A1.52";
     private final static int delayTime = 1300;
     static final String TAG = "SplashActivity";
 
@@ -65,59 +65,6 @@ public class SplashActivity extends Activity implements GoogleApiClient.Connecti
 
             requestWindowFeature(Window.FEATURE_NO_TITLE);
             setContentView(R.layout.activity_splash);
-
-
-        /*mLocationRequest = new LocationRequest();
-        mLocationRequest.setInterval(60000);
-        mLocationRequest.setFastestInterval(30000);
-        mLocationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
-        if (mGoogleApiClient == null){
-            mGoogleApiClient =
-                    new GoogleApiClient.Builder(this)
-                            .addApi(LocationServices.API)
-                            .addConnectionCallbacks(this)
-                            .addOnConnectionFailedListener(this)
-                            .build();
-            mGoogleApiClient.connect();
-        }*/
-            /*timer = new Timer();
-
-            if (!userInfo.getBoolean("isVerified", false)) {
-                final ImageButton getStarted = (ImageButton) findViewById(R.id.splash_get_started);
-                final Handler mHandler = new Handler() {
-                    public void handleMessage(Message msg) {
-                        getStarted.setVisibility(View.VISIBLE);
-                        getStarted.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-                                startActivity(new Intent(SplashActivity.this, NewVerifyActivity.class));
-                                overridePendingTransition(R.anim.slide_in_up, R.anim.slide_out_up);
-                            }
-                        });
-                    }
-                };
-
-                timer.schedule(new TimerTask() {
-                    public void run() {
-                        mHandler.obtainMessage(1).sendToTarget();
-                    }
-                }, delayTime);
-            } else {
-                timer.schedule(new TimerTask() {
-                    public void run() {
-                        if (userInfo.getBoolean("isDriving", false)) {
-                            Intent intent = new Intent(SplashActivity.this, SetDrivingActivity.class);
-                            intent.putExtra("auto", true);
-                            startActivity(intent);
-
-                        } else
-                            startActivity(new Intent(SplashActivity.this, MainActivity.class));
-
-                    }
-
-                }, delayTime);
-            }*/
-
         }
 	}
 	

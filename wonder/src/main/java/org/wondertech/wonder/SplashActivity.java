@@ -29,7 +29,7 @@ public class SplashActivity extends Activity{
     private final static int PLAY_SERVICES_RESOLUTION_REQUEST = 9000;
     private Timer timer;
     private final static String serverURL = "https://prod.wonderdev.com/v1/";
-    private final static String appVersion = "A1.52";
+    private final static String appVersion = "A1.53";
     private final static int delayTime = 1300;
     static final String TAG = "SplashActivity";
 

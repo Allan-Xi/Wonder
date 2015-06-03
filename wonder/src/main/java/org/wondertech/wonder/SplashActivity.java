@@ -1,7 +1,6 @@
 package org.wondertech.wonder;
 
 import android.app.Activity;
-import android.app.PendingIntent;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -16,7 +15,6 @@ import com.amplitude.api.Amplitude;
 import com.crashlytics.android.Crashlytics;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
-import com.google.android.gms.common.api.GoogleApiClient;
 import com.uservoice.uservoicesdk.Config;
 import com.uservoice.uservoicesdk.UserVoice;
 
@@ -34,10 +32,6 @@ public class SplashActivity extends Activity{
     private final static String appVersion = "A1.52";
     private final static int delayTime = 1300;
     static final String TAG = "SplashActivity";
-
-    private PendingIntent mLocationPendingIntent;
-    static public GoogleApiClient mGoogleApiClient;
-
 
     @Override
 	protected void onCreate(Bundle savedInstanceState) {

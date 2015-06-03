@@ -907,40 +907,46 @@ public class MainActivity extends FragmentActivity implements LoaderManager.Load
                     }
                     br.close();
                     JSONObject result = new JSONObject(sb.toString());
-                    JSONObject ja = result.getJSONObject("notifications");
-                    Iterator<?> keys = ja.keys();
-                    List<ContentValues> bulkInsertContentValues = new ArrayList<>();
-                    while( keys.hasNext() ) {
-                        String key = (String) keys.next();
-                        final String[] tmp = key.split("-", 3);
+                    if(!result.isNull("notifications")){
+                        JSONArray ja = result.getJSONArray("notifications");
+                        List<ContentValues> bulkInsertContentValues = new ArrayList<>();
+                        for (int i = 0; i < ja.length(); ++i){
+                            JSONObject js = ja.getJSONObject(i);
+                            Iterator<?> keys = js.keys();
+                            while( keys.hasNext() ) {
+                                String key = (String) keys.next();
+                                final String[] tmp = key.split("-", 3);
 
-                        Cursor cur = getContentResolver().query(
-                                WonderContract.NotificationEntry.CONTENT_URI,
-                                null,
-                                WonderContract.NotificationEntry.COLUMN_MESSAGE_ID + " =?",
-                                new String[]{key},
-                                null
-                        );
-                        if (cur.getCount() != 0) {
-                            cur.close();
-                            continue;
-                        }else {
-                            cur.close();
+                                Cursor cur = getContentResolver().query(
+                                        WonderContract.NotificationEntry.CONTENT_URI,
+                                        null,
+                                        WonderContract.NotificationEntry.COLUMN_MESSAGE_ID + " =?",
+                                        new String[]{key},
+                                        null
+                                );
+                                if (cur.getCount() != 0) {
+                                    cur.close();
+                                    continue;
+                                }else {
+                                    cur.close();
+                                }
+
+                                ContentValues values = new ContentValues();
+                                values.put(WonderContract.NotificationEntry.COLUMN_CONTENT, js.getString(key));
+                                values.put(WonderContract.NotificationEntry.COLUMN_TYPE, Integer.parseInt(tmp[1]));
+                                values.put(WonderContract.NotificationEntry.COLUMN_TIME, (long)Double.parseDouble(tmp[2]));
+                                values.put(WonderContract.NotificationEntry.COLUMN_PHONE, tmp[0]);
+                                values.put(WonderContract.NotificationEntry.COLUMN_IS_READ, 0);
+                                values.put(WonderContract.NotificationEntry.COLUMN_MESSAGE_ID, key);
+                                bulkInsertContentValues.add(values);
+                            }
                         }
-
-                        ContentValues values = new ContentValues();
-                        values.put(WonderContract.NotificationEntry.COLUMN_CONTENT, ja.getString(key));
-                        values.put(WonderContract.NotificationEntry.COLUMN_TYPE, Integer.parseInt(tmp[1]));
-                        values.put(WonderContract.NotificationEntry.COLUMN_TIME, (long)Double.parseDouble(tmp[2]));
-                        values.put(WonderContract.NotificationEntry.COLUMN_PHONE, tmp[0]);
-                        values.put(WonderContract.NotificationEntry.COLUMN_IS_READ, 0);
-                        values.put(WonderContract.NotificationEntry.COLUMN_MESSAGE_ID, key);
-                        bulkInsertContentValues.add(values);
+                        ContentValues[] bulkInsertContentValuesArr = new ContentValues[bulkInsertContentValues.size()];
+                        bulkInsertContentValuesArr = bulkInsertContentValues.toArray(bulkInsertContentValuesArr);
+                        getContentResolver().bulkInsert(WonderContract.NotificationEntry.CONTENT_URI,
+                                bulkInsertContentValuesArr);
                     }
-                    ContentValues[] bulkInsertContentValuesArr = new ContentValues[bulkInsertContentValues.size()];
-                    bulkInsertContentValuesArr = bulkInsertContentValues.toArray(bulkInsertContentValuesArr);
-                    getContentResolver().bulkInsert(WonderContract.NotificationEntry.CONTENT_URI,
-                            bulkInsertContentValuesArr);
+
                 }
                 else{
                     System.out.println(urlConnection.getResponseMessage());

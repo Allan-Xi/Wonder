@@ -150,11 +150,6 @@
         </service>
 
         <activity
-            android:name=".DrivingLogActivity"
-            android:label="@string/title_activity_driving_log"
-            android:screenOrientation="portrait" >
-        </activity>
-        <activity
             android:name=".CallActivity"
             android:label="@string/title_activity_call"
             android:parentActivityName=".GetMessageActivity"
@@ -256,8 +251,6 @@
             android:label="@string/title_activity_verify_message"
             android:screenOrientation="portrait">
         </activity>
-        <service android:name="com.zendrive.sdk.services.UserActivityService" />
-        <service android:name="com.zendrive.sdk.services.ZendriveService" />
         <service android:name=".services.ContactService" />
         <service android:name=".services.VOIPService"/>
         <service android:name=".services.DetectionDrivingService"/>

@@ -85,14 +85,7 @@ public class SplashActivity extends Activity{
             } else {
                 timer.schedule(new TimerTask() {
                     public void run() {
-                        if (userInfo.getBoolean("isDriving", false)) {
-                            Intent intent = new Intent(SplashActivity.this, SetDrivingActivity.class);
-                            intent.putExtra("auto", true);
-                            startActivity(intent);
-
-                        } else
-                            startActivity(new Intent(SplashActivity.this, MainActivity.class));
-
+                        startActivity(new Intent(SplashActivity.this, MainActivity.class));
                     }
 
                 }, delayTime);

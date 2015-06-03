@@ -68,7 +68,7 @@ public class ActivityRecognitionIntentService extends IntentService {
 				} else
 					count++;
 
-				if (activityName == "in_vehicle") {
+				if (activityName.equals("in_vehicle")) {
 					driving++;
 					queue.add(new DrivingStatus(true, currentTime));
 				} else {
@@ -78,7 +78,7 @@ public class ActivityRecognitionIntentService extends IntentService {
 				Log.v(activityName, Integer.toString(confidence)+ "%");
 				Log.v("count", Integer.toString(count));
 				Log.v("driving", Integer.toString(driving));
-				if (driving > 2){
+				if (driving > 2 ){
 					if (!userInfo.getBoolean("isDriving", false)) {
 						Log.v("start driving", "123");
 						userInfo.edit().putBoolean("isDriving", true).apply();
@@ -100,6 +100,7 @@ public class ActivityRecognitionIntentService extends IntentService {
             {
 				if (count >= 30 && userInfo.getBoolean("isDriving", false) && driving < 3)
             	{
+					userInfo.edit().putBoolean("isDriving", false).apply();
 					if (userInfo.getBoolean("autoDriving", true)){
 						new SetDrivingTask(ActivityRecognitionIntentService.this).execute(false);
 						Intent intent1 = new Intent(ActivityRecognitionIntentService.this, MainActivity.class);
@@ -108,7 +109,7 @@ public class ActivityRecognitionIntentService extends IntentService {
 					}else {
 						userInfo.edit().putBoolean("autoDriving", true).apply();
 					}
-					userInfo.edit().putBoolean("isDriving", false).apply();
+
             	}
             }
         	

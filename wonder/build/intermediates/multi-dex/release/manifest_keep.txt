@@ -18,7 +18,6 @@
 -keep class org.wondertech.wonder.InviteActivity { <init>(); }
 -keep class org.wondertech.wonder.SettingsActivity { <init>(); }
 -keep class org.wondertech.wonder.services.ActivityRecognitionIntentService { <init>(); }
--keep class org.wondertech.wonder.DrivingLogActivity { <init>(); }
 -keep class org.wondertech.wonder.CallActivity { <init>(); }
 -keep class org.wondertech.wonder.VOIPActivity { <init>(); }
 -keep class org.wondertech.wonder.WebActivity { <init>(); }
@@ -35,8 +34,6 @@
 -keep class org.wondertech.wonder.EnableDriving { <init>(); }
 -keep class org.wondertech.wonder.DetectionDescription { <init>(); }
 -keep class org.wondertech.wonder.VerifyMessage { <init>(); }
--keep class com.zendrive.sdk.services.UserActivityService { <init>(); }
--keep class com.zendrive.sdk.services.ZendriveService { <init>(); }
 -keep class org.wondertech.wonder.services.ContactService { <init>(); }
 -keep class org.wondertech.wonder.services.VOIPService { <init>(); }
 -keep class org.wondertech.wonder.services.DetectionDrivingService { <init>(); }

@@ -88,11 +88,11 @@ public class CheckMotionDetectionService extends Service {
                     int status = info.getStatus();
                     int accuracy = info.getAccuracy();
                     long timestamp = info.getTimeStamp();
-                    if (timestamp - lastDriveTime > SUBSCRIBEDRIVINGINTERVAL){
+                    if (timestamp - lastDriveTime > SUBSCRIBEDRIVINGINTERVAL
+                            && userInfo.getBoolean("autoDriving", true)){
                         if (accuracy == SmotionActivityNotification.Info.ACCURACY_HIGH){
                             Log.v("start driving", "samsung");
                             userInfo.edit().putBoolean("isDriving", true).apply();
-                            userInfo.edit().putBoolean("autoDriving", true).apply();
                             new SetDrivingTask(CheckMotionDetectionService.this).execute(true);
                             Intent intent1 = new Intent(CheckMotionDetectionService.this, SetDrivingActivity.class);
                             intent1.putExtra("auto", true);
@@ -109,12 +109,15 @@ public class CheckMotionDetectionService extends Service {
                                 }
 
                                 public void onFinish() {
-                                    userInfo.edit().putBoolean("autoDriving", false).apply();
                                     userInfo.edit().putBoolean("isDriving", false).apply();
-                                    new SetDrivingTask(CheckMotionDetectionService.this).execute(false);
-                                    Intent intent1 = new Intent(CheckMotionDetectionService.this, MainActivity.class);
-                                    intent1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                                    startActivity(intent1);
+                                    if (userInfo.getBoolean("autoDriving", true)){
+                                        new SetDrivingTask(CheckMotionDetectionService.this).execute(false);
+                                        Intent intent1 = new Intent(CheckMotionDetectionService.this, MainActivity.class);
+                                        intent1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                                        startActivity(intent1);
+                                    }else {
+                                        userInfo.edit().putBoolean("autoDriving", true).apply();
+                                    }
                                 }
                             };
                             cdt.start();

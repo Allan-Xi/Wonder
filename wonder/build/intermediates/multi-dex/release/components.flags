@@ -80,10 +80,6 @@
     <init>();
 }
 
--keep class org.wondertech.wonder.DrivingLogActivity {
-    <init>();
-}
-
 -keep class org.wondertech.wonder.CallActivity {
     <init>();
 }
@@ -145,14 +141,6 @@
 }
 
 -keep class org.wondertech.wonder.VerifyMessage {
-    <init>();
-}
-
--keep class com.zendrive.sdk.services.UserActivityService {
-    <init>();
-}
-
--keep class com.zendrive.sdk.services.ZendriveService {
     <init>();
 }
 

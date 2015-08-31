@@ -63,42 +63,43 @@ import org.wondertech.wonder.data.WonderContract;
 
 				//sendNotification("Message Received from Google GCM Server: ");
 				try {
-					JSONObject result = new JSONObject(extras.getString("data"));
-					Log.v("gcmContent", result.toString());
-					if (result.has("voip_info")) {
-						String sinchPayload = result.getString("voip_info");
-						callFromPhone = result.getString("call_from_phone");
-					    if (VOIPService.sinchClient != null) {
-							VOIPService.sinchClient.relayRemotePushNotificationPayload(sinchPayload);
-					    }
-					}
-					else if (result.has("request_type")) {
-						phone =  result.getString("phone");
-						switch(result.getInt("request_type")) {
-						case 1:
-						{
-							try {
-								String id = getId(phone);
-								Utilities.updateToAndroid(GCMNotificationIntentService.this, id, Utilities.RESTORE);
-								ContentValues values = new ContentValues();
-								values.put(WonderContract.ContactEntry.COLUMN_ON_WONDER, 0);
-								values.put(WonderContract.ContactEntry.COLUMN_DRIVING, 0);
-								values.put(WonderContract.ContactEntry.COLUMN_LEAVE_MESSAGE, 0);
-								values.put(WonderContract.ContactEntry.COLUMN_NOTIFY, 0);
-								values.put(WonderContract.ContactEntry.COLUMN_REQUEST_CALL, 0);
-								values.put(WonderContract.ContactEntry.COLUMN_INVITED, 0);
-								getContentResolver().update(WonderContract.ContactEntry.CONTENT_URI,
-										values,
-										WonderContract.ContactEntry.COLUMN_PHONE + " =?",
-										new String[]{phone});
-							} catch (Exception e) {
-								e.printStackTrace();
+					if (extras.getString("data") != null){
+						JSONObject result = new JSONObject(extras.getString("data"));
+						Log.v("gcmContent", result.toString());
+						if (result.has("voip_info")) {
+							String sinchPayload = result.getString("voip_info");
+							callFromPhone = result.getString("call_from_phone");
+							if (VOIPService.sinchClient != null) {
+								VOIPService.sinchClient.relayRemotePushNotificationPayload(sinchPayload);
 							}
-							break;
 						}
-						case 20:
-							{
-								if (result.getString("phone") == userInfo.getString("phone", "")) {
+						else if (result.has("request_type")) {
+							phone =  result.getString("phone");
+							switch(result.getInt("request_type")) {
+								case 1:
+								{
+									try {
+										String id = getId(phone);
+										Utilities.updateToAndroid(GCMNotificationIntentService.this, id, Utilities.RESTORE);
+										ContentValues values = new ContentValues();
+										values.put(WonderContract.ContactEntry.COLUMN_ON_WONDER, 0);
+										values.put(WonderContract.ContactEntry.COLUMN_DRIVING, 0);
+										values.put(WonderContract.ContactEntry.COLUMN_LEAVE_MESSAGE, 0);
+										values.put(WonderContract.ContactEntry.COLUMN_NOTIFY, 0);
+										values.put(WonderContract.ContactEntry.COLUMN_REQUEST_CALL, 0);
+										values.put(WonderContract.ContactEntry.COLUMN_INVITED, 0);
+										getContentResolver().update(WonderContract.ContactEntry.CONTENT_URI,
+												values,
+												WonderContract.ContactEntry.COLUMN_PHONE + " =?",
+												new String[]{phone});
+									} catch (Exception e) {
+										e.printStackTrace();
+									}
+									break;
+								}
+								case 20:
+								{
+									if (result.getString("phone") == userInfo.getString("phone", "")) {
 									/*if (!result.getBoolean("is_driving") && userInfo.getBoolean("isDriving", false)) {
 										if (DetectionDrivingService.ttask != null) {
 											DetectionDrivingService.ttask.cancel();
@@ -112,82 +113,84 @@ import org.wondertech.wonder.data.WonderContract;
 										intent1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 										startActivity(intent1);
 									}*/
-								}else{
-									if (result.getBoolean("is_driving")) {
-										ContentValues values = new ContentValues();
-										values.put(WonderContract.ContactEntry.COLUMN_DRIVING, 1);
-										getContentResolver().update(WonderContract.ContactEntry.CONTENT_URI,
-												values,
-												WonderContract.ContactEntry.COLUMN_PHONE + " =?",
-												new String[]{result.getString("phone")});
-										try {
-											Utilities.updateToAndroid(GCMNotificationIntentService.this,
-													getId(result.getString("phone")), Utilities.DRIVING);
-										} catch (Exception e) {
-											e.printStackTrace();
-										}
 									}else{
-										ContentValues values = new ContentValues();
-										values.put(WonderContract.ContactEntry.COLUMN_DRIVING, 0);
-										values.put(WonderContract.ContactEntry.COLUMN_NOTIFY, 0);
-										values.put(WonderContract.ContactEntry.COLUMN_LEAVE_MESSAGE, 0);
-										values.put(WonderContract.ContactEntry.COLUMN_REQUEST_CALL, 0);
-										getContentResolver().update(WonderContract.ContactEntry.CONTENT_URI,
-												values,
-												WonderContract.ContactEntry.COLUMN_PHONE + " =?",
-												new String[]{result.getString("phone")});
-										try {
-											Utilities.updateToAndroid(GCMNotificationIntentService.this,
-													getId(result.getString("phone")), Utilities.ONORBIT);
-										} catch (Exception e) {
-											e.printStackTrace();
+										if (result.getBoolean("is_driving")) {
+											ContentValues values = new ContentValues();
+											values.put(WonderContract.ContactEntry.COLUMN_DRIVING, 1);
+											getContentResolver().update(WonderContract.ContactEntry.CONTENT_URI,
+													values,
+													WonderContract.ContactEntry.COLUMN_PHONE + " =?",
+													new String[]{result.getString("phone")});
+											try {
+												Utilities.updateToAndroid(GCMNotificationIntentService.this,
+														getId(result.getString("phone")), Utilities.DRIVING);
+											} catch (Exception e) {
+												e.printStackTrace();
+											}
+										}else{
+											ContentValues values = new ContentValues();
+											values.put(WonderContract.ContactEntry.COLUMN_DRIVING, 0);
+											values.put(WonderContract.ContactEntry.COLUMN_NOTIFY, 0);
+											values.put(WonderContract.ContactEntry.COLUMN_LEAVE_MESSAGE, 0);
+											values.put(WonderContract.ContactEntry.COLUMN_REQUEST_CALL, 0);
+											getContentResolver().update(WonderContract.ContactEntry.CONTENT_URI,
+													values,
+													WonderContract.ContactEntry.COLUMN_PHONE + " =?",
+													new String[]{result.getString("phone")});
+											try {
+												Utilities.updateToAndroid(GCMNotificationIntentService.this,
+														getId(result.getString("phone")), Utilities.ONORBIT);
+											} catch (Exception e) {
+												e.printStackTrace();
+											}
 										}
 									}
+									break;
 								}
-								break;
 							}
 						}
-					}
-					else if (result.has("alert_type")) {
-						switch(result.getInt("alert_type")) {
-						case 71:
+						else if (result.has("alert_type")) {
+							switch(result.getInt("alert_type")) {
+								case 71:
 
-							NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(
-									this).setSmallIcon(R.drawable.biglogo)
-									.setContentTitle("wonder")
-									.setStyle(new NotificationCompat.BigTextStyle().bigText(result.getString("alert_text")))
-									.setContentText(result.getString("alert_text"));
+									NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(
+											this).setSmallIcon(R.drawable.biglogo)
+											.setContentTitle("wonder")
+											.setStyle(new NotificationCompat.BigTextStyle().bigText(result.getString("alert_text")))
+											.setContentText(result.getString("alert_text"));
 
-                            // Creates an explicit intent for an Activity in your app
-                            Intent resultIntent = new Intent(this, GetMessageActivity.class);
+									// Creates an explicit intent for an Activity in your app
+									Intent resultIntent = new Intent(this, GetMessageActivity.class);
 
-                            // The stack builder object will contain an artificial back stack for the
-                            // started Activity.
-                            // This ensures that navigating backward from the Activity leads out of
-                               // your application to the Home screen.
-                            TaskStackBuilder stackBuilder = TaskStackBuilder.create(this);
-                            // Adds the back stack for the Intent (but not the Intent itself)
-                            stackBuilder.addParentStack(GetMessageActivity.class);
-                            // Adds the Intent that starts the Activity to the top of the stack
-                            stackBuilder.addNextIntent(resultIntent);
-                            PendingIntent resultPendingIntent =
-                                    stackBuilder.getPendingIntent(
-                                            0,
-                                            PendingIntent.FLAG_UPDATE_CURRENT
-                                    );
-                            mBuilder.setContentIntent(resultPendingIntent);
-                            NotificationManager mNotificationManager =
-                                    (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-							// mId allows you to update the notification later on.
-							mNotificationManager.notify(NOTIFICATION_ID, mBuilder.build());
-							break;
-							case 72:
-							case 73:
-								sendNotification(result.getString("alert_text"));
+									// The stack builder object will contain an artificial back stack for the
+									// started Activity.
+									// This ensures that navigating backward from the Activity leads out of
+									// your application to the Home screen.
+									TaskStackBuilder stackBuilder = TaskStackBuilder.create(this);
+									// Adds the back stack for the Intent (but not the Intent itself)
+									stackBuilder.addParentStack(GetMessageActivity.class);
+									// Adds the Intent that starts the Activity to the top of the stack
+									stackBuilder.addNextIntent(resultIntent);
+									PendingIntent resultPendingIntent =
+											stackBuilder.getPendingIntent(
+													0,
+													PendingIntent.FLAG_UPDATE_CURRENT
+											);
+									mBuilder.setContentIntent(resultPendingIntent);
+									NotificationManager mNotificationManager =
+											(NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+									// mId allows you to update the notification later on.
+									mNotificationManager.notify(NOTIFICATION_ID, mBuilder.build());
+									break;
+								case 72:
+								case 73:
+									sendNotification(result.getString("alert_text"));
+
+							}
 
 						}
-						
 					}
+
 						
 					
 				} catch (JSONException e) {
